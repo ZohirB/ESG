@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  direction: rtl;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 20px;
+  color: #435757;
+  background: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%);
+  font: 500 1.2em/1.2 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  border-top: 5px solid #435757;
+  background-color: rgba(255, 255, 255, .2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  user-select: none;
+}
+
+h1 {
+  margin: 0;
+  padding: 25Px;
+  background-color: rgba(255, 255, 255, .4);
+  font-size: 1.4em;
+  text-align: center;
+}
+
+h2 {
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: -20px;
+  width: 5px;
+  background-color: #435757;
+}
+
+h2::before {
+  display: block;
+  float: left;
+  font-weight: normal;
+}
+
+/*
+.First_Year {
+  order: 0;
+}
+.Second_Year {
+  order: 0;
+}
+.Third_Year{
+  order: 0;
+}
+.Fourth_Year {
+  order: 0;
+}
+.Fifth_Year {
+  order: 0;
+}
+.selected {order: 2;}
+*/
+
+.selected::before {content: ' (' counter(selected-subjects) ')';}
+
+/* hide inputs offscreen, but at the same vertical positions as the correpsonding labels, so that tabbing scrolls the viewport as expected */
+input {
+  display: block;
+  height: 53px;
+  margin: 0 -9999px -53px 0px;
+  /*order: 0;*/
+  outline: none;
+}
+
+input:checked {
+  /*order: 2;*/
+  counter-increment: selected-subjects;  
+}
+
+label {
+  display: block;
+  position: relative;
+  padding: 15px 45px 15px 0px;
+  border-top: 1px dashed #fff;
+  cursor: pointer;
+  /*order: 0;*/
+}
+
+label::after {
+  content: '\f10c'; /* circle outline */
+  display: block;
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  font: 1.5em 'FontAwesome';
+  animation: 1s;
+}
+
+label:hover, input:focus + label {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+input:checked + label {
+  /*order: 2;*/
+  animation: selected .5s;
+}
+
+input:checked + label::after {
+  content: '\f058'; /* circle checkmark */
+}
+
+@keyframes selected {
+  0%{
+    opacity: 0;
+    background-color: rgba(255, 255, 255, .4);
+    transform: translateY(-10px);
+    transform: translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, .4);
+  }
+}

@@ -1,0 +1,109 @@
+
+#FirstYear {display: none;}
+#SecondYear {display: none;}
+#ThirdYear {display: none;}
+#FourthYear {display: none;}
+#FifthYear {display: none;}
+
+
+/* CSS Button */
+.button-18 {
+  align-items: center;
+  background-color: #435757;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus { 
+  background-color: #43575769;
+  color: #ffffff;
+}
+
+.button-18:active {
+  background: rgba(255, 255, 255, .4);
+  color: #435757;
+}
+
+.button-18:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+
+
+/* items */
+.subjects {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  counter-reset: selected-subjects;
+}
+
+.format {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sub_button {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.container-1 {
+  max-width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  color: #ffffff;
+  font-family: Arvo-Regular;
+  font-size: small;
+  border-top: 5px solid #435757;
+  background-color: #435757;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  user-select: none;
+  text-align: left;
+}
+
+@font-face {
+  font-family: 'Arvo-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Arvo-Regular.ttf);
+}
