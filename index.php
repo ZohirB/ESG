@@ -1,7 +1,7 @@
 <?php
     include("core.php");
     include("schedule.php");
-    include("func.php");
+    include("function.php");
 ?>
 
 <!DOCTYPE html>
@@ -26,27 +26,27 @@
         echo"<div class='subjects'>";
         echo"<h2 class='First_Year' aria-hidden='true' type='button' onclick='DropDown(FirstYear)'>السنة الأولى</h2>";
         echo"<div id='FirstYear'>";
-        pr_f(1,1,200,7);
+        print_labels(1,1,200,7);
         echo"</div>";
         
         echo"<h2 class='Second_Year' aria-hidden='true' type='button' onclick='DropDown(SecondYear)'>السنة الثانية</h2>";
         echo"<div id='SecondYear'>";
-        pr_f(2,3,202,21);
+        print_labels(2,3,202,21);
         echo"</div>";
 
         echo"<h2 class='Third_Year' aria-hidden='true' type='button' onclick='DropDown(ThirdYear)'>السنة الثالثة</h2>";
         echo"<div id='ThirdYear'>";
-        pr_f(3,5,204,35);
+        print_labels(3,5,204,35);
         echo"</div>";
 
         echo"<h2 class='Fourth_Year' aria-hidden='true' type='button' onclick='DropDown(FourthYear)'>السنة الرابعة</h2>";
         echo"<div id='FourthYear'>";
-        pr_f(4,7,206,50);
+        print_labels(4,7,206,50);
         echo"</div>";
 
         echo"<h2 class='Fifth_Year' aria-hidden='true' type='button' onclick='DropDown(FifthYear)'>السنة الخامسة</h2>";
         echo"<div id='FifthYear'>";
-        pr_f(5,9,208,64);
+        print_labels(5,9,208,64);
         echo"</div>";
         echo"<h2 class='Select_Count' aria-hidden='true' id='crazyoutput'>عدد المواد المحددة</h2>";
 

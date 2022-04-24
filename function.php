@@ -18,7 +18,7 @@
         echo "<label for='" . $key . "'>" . $val['name2'] . "</label>";
     }
 
-    function pr_f($s_year,$to,$in_id,$co_id){
+    function print_labels($s_year,$to,$in_id,$co_id){
         check_mul_label($in_id,$to);
         $in_id++;
         $to++;
