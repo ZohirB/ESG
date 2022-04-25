@@ -71,7 +71,10 @@
         echo"<div class='theme'>";
         echo"<h2 class='h2-1'>اختر لون الجدول</h2>";
 
-        echo"<input type='radio' id='150' name='design' value='1' checked='checked'>";
+        echo"<input type='radio' id='154' name='design' value='5' checked='checked'>";
+        echo"<label for='154'>اللون البنفسجي</label>";
+
+        echo"<input type='radio' id='150' name='design' value='1'>";
         echo"<label for='150'>اللون الازرق</label>";
 
         echo"<input type='radio' id='151' name='design' value='2'>";
@@ -83,8 +86,8 @@
         echo"<input type='radio' id='153' name='design' value='4'>";
         echo"<label for='153'>اللون الاخضر</label>";
         
-        echo"<input type='radio' id='154' name='design' value='5'>";
-        echo"<label for='154'>اللون البنفسجي</label>";
+        echo"<input type='radio' id='155' name='design' value='6'>";
+        echo"<label for='155'>اللون X</label>";
 
         echo"</div>";
         echo"</div>";
