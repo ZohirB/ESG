@@ -22,40 +22,42 @@
         echo "<form method='post'>";
         echo"<div class='container'>";
         echo"<h1>مولد برنامج الفحص الخاص بكلية الهندسة المعلوماتية بجامعة حلب</h1>";
-
+        
         echo"<div class='subjects'>";
-        echo"<h2 class='First_Year' aria-hidden='true' type='button' onclick='DropDown(FirstYear)'>السنة الأولى</h2>";
+        echo"<h2 class='h2-1' aria-hidden='true' type='button'>اختر المواد</h2>";
+
+        echo"<h2 class='First_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(FirstYear)'>السنة الأولى</h2>";
         echo"<div id='FirstYear'>";
         print_labels(1,1,200,7);
         echo"</div>";
         
-        echo"<h2 class='Second_Year' aria-hidden='true' type='button' onclick='DropDown(SecondYear)'>السنة الثانية</h2>";
+        echo"<h2 class='Second_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(SecondYear)'>السنة الثانية</h2>";
         echo"<div id='SecondYear'>";
         print_labels(2,3,202,21);
         echo"</div>";
 
-        echo"<h2 class='Third_Year' aria-hidden='true' type='button' onclick='DropDown(ThirdYear)'>السنة الثالثة</h2>";
+        echo"<h2 class='Third_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(ThirdYear)'>السنة الثالثة</h2>";
         echo"<div id='ThirdYear'>";
-        print_labels(3,5,204,35);
+            print_labels(3,5,204,35);
         echo"</div>";
 
-        echo"<h2 class='Fourth_Year' aria-hidden='true' type='button' onclick='DropDown(FourthYear)'>السنة الرابعة</h2>";
+        echo"<h2 class='Fourth_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(FourthYear)'>السنة الرابعة</h2>";
         echo"<div id='FourthYear'>";
         print_labels(4,7,206,50);
         echo"</div>";
 
-        echo"<h2 class='Fifth_Year' aria-hidden='true' type='button' onclick='DropDown(FifthYear)'>السنة الخامسة</h2>";
+        echo"<h2 class='Fifth_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(FifthYear)'>السنة الخامسة</h2>";
         echo"<div id='FifthYear'>";
         print_labels(5,9,208,64);
         echo"</div>";
-        echo"<h2 class='Select_Count' aria-hidden='true' id='crazyoutput'>عدد المواد المحددة</h2>";
+        echo"<h2 class='Select_Count h2-1' aria-hidden='true' id='crazyoutput'>عدد المواد المحددة</h2>";
 
         echo"</div>";
         echo"</div>";
 
         echo"<div class='container'>";
         echo"<div class='format'>";
-        echo"<h2>اختر تنسيق الجدول</h2>";
+        echo"<h2 class='h2-1'>اختر تنسيق الجدول</h2>";
 
         echo"<input type='radio' input id='144' name='ty' value='1' checked='checked'>";
         echo"<label for='144'>تنسيق يوم-مادة</label>";
@@ -67,7 +69,7 @@
 
         echo"<div class='container'>";
         echo"<div class='theme'>";
-        echo"<h2>اختر لون الجدول</h2>";
+        echo"<h2 class='h2-1'>اختر لون الجدول</h2>";
 
         echo"<input type='radio' id='150' name='design' value='1' checked='checked'>";
         echo"<label for='150'>اللون الازرق</label>";
