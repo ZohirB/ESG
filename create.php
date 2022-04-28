@@ -1,17 +1,14 @@
 <?php
 include("core.php");
 include("schedule.php");
-$options['widthmargin']=300;
+
 $options['heightmargin']=75;
 $options['betweenmargin']=5;
 $options['titletablemargin']=50;
-$options['cellwidthmargin']=100;
+$options['cellwidthmargin']=110;
 $options['cellheightmargin']=25;
 $options['subjectwidthmargin']=50;
 $options['linethickness']=4;
-$options['textsize']=20;
-$options['headertextsize']=33;
-$options['titlesize']=40;
 $options['isremoveempty']=true;
 $options['isremoveweekend']=true;
 
@@ -44,7 +41,7 @@ if($selected[0]==""){
 
 $design =$r['design'] ;
 $ty=$r['format'];
-
+$font=$r['font'];
 
 if($design == 1){
     $options['backgroundcolor']=array(0xa9,0xc2,0xeF);
@@ -97,7 +94,7 @@ if($design == 1){
     $options['headercolor']=array(0x00,0x6B,0x02);
     $options['titlecolor']=array(0x00,0x4B,0x02);
 
-} else if ($design == 6){
+} else if ($design == 5){
     $options['backgroundcolor']=array(0xA4,0xA4,0xBF); //array(0x16,0x23,0x5A)
     $options['cellcolor']=array(0xF2,0xEA,0xED); //array(0xA4,0xA4,0xBF)
     $options['headercolor']=array(0x2A,0x34,0x57);
@@ -105,7 +102,58 @@ if($design == 1){
     $options['titlecolor']=array(0xFF,0xFF,0xFF);//array(0x88,0xC4,0x64)
     $options['headertextcolor']=array(0xFF,0xFF,0xFF);
     $options['textcolor']=array(0x16,0x23,0x5A); //array(0xF2,0xEA,0xED)
+} else if ($design == 6){
+    $options['backgroundcolor']=array(0xA4,0xA4,0xBF);
+    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['headercolor']=array(0x2A,0x34,0x57);
+    $options['linecolor']=array(0x2A,0x34,0x57);
+    $options['titlecolor']=array(0xFF,0xFF,0xFF);
+    $options['headertextcolor']=array(0xFF,0xFF,0xFF);
+    $options['textcolor']=array(0x16,0x23,0x5A); 
 }
+
+$local = $_SERVER['SCRIPT_FILENAME'];
+$pos   = strrpos($local, '/');
+$path  = substr($local, 0, $pos);
+
+if ($font == 1){
+    $font  = $path.'/font_php/1.ttf';
+    $options['widthmargin']=300;
+    $options['textsize']=20;
+    $options['headertextsize']=33;
+    $options['titlesize']=40;  
+} else if ($font == 2){
+    $font  = $path.'/font_php/2.ttf';
+    $options['widthmargin']=400;
+    $options['textsize']=25;
+    $options['headertextsize']=37;
+    $options['titlesize']=45;  
+} else if ($font == 3){
+    $font  = $path.'/font_php/3.ttf';
+    $options['widthmargin']=400;
+    $options['textsize']=25;
+    $options['headertextsize']=37;
+    $options['titlesize']=45;  
+} else if ($font == 4){
+    $font  = $path.'/font_php/4.ttf';
+    $options['widthmargin']=350;
+    $options['textsize']=30;
+    $options['headertextsize']=40;
+    $options['titlesize']=55;  
+} else if ($font == 5){
+    $font  = $path.'/font_php/5.ttf';
+    $options['widthmargin']=400;
+    $options['textsize']=28;
+    $options['headertextsize']=38;
+    $options['titlesize']=49;  
+} else if ($font == 6){
+    $font  = $path.'/font_php/6.ttf';
+    $options['widthmargin']=400;
+    $options['textsize']=25;
+    $options['headertextsize']=37;
+    $options['titlesize']=45;  
+}
+
 
 
 if($ty == 1){
@@ -135,29 +183,29 @@ if($ty == 1){
     }
     $selected = $temp;
 
-    $col[0]=gettextwidth($subjecttext,$options['headertextsize']);
-    $col[1]=gettextwidth($datetext,$options['headertextsize']);
+    $col[0]=gettextwidth($font,$subjecttext,$options['headertextsize']);
+    $col[1]=gettextwidth($font,$datetext,$options['headertextsize']);
     $totwidth=array();
     $begin = new DateTime($startdate );
     $end   = new DateTime( $enddate );
     $row=array();
-    $row[0]=max(gettextheight($subjecttext,$options['headertextsize']),gettextheight($datetext,$options['headertextsize']));
+    $row[0]=max(gettextheight($font,$subjecttext,$options['headertextsize']),gettextheight($font,$datetext,$options['headertextsize']));
     $totwidth[0]=$col[0];
     $cnt=1;
     for($i = $begin; $i <= $end; $i->modify('+1 day')){
         $subject = findbydate($i);
         if($options['isremoveempty'] and $subject == false)continue;
         if($options['isremoveweekend'] and ($i->format("w") == 5))continue;
-        $row[$cnt]=gettextheight($i->format("Y/m/d"),$options['textsize']) + $options['betweenmargin'] + gettextheight($dayweek[$i->format("w")],$options['textsize']);
+        $row[$cnt]=gettextheight($font,$i->format("Y/m/d"),$options['textsize']) + $options['betweenmargin'] + gettextheight($font,$dayweek[$i->format("w")],$options['textsize']);
 
-        $col[1]=max($col[1],gettextwidth($i->format("Y/m/d"),$options['textsize']));
-        $col[1]=max($col[1],gettextwidth($dayweek[$i->format("w")],$options['textsize']));
+        $col[1]=max($col[1],gettextwidth($font,$i->format("Y/m/d"),$options['textsize']));
+        $col[1]=max($col[1],gettextwidth($font,$dayweek[$i->format("w")],$options['textsize']));
         $currow=0;
         $curcol=0;
         foreach($subject as $key=>$val){
-            $crow=gettextheight($val['name'],$options['textsize'])+ gettextheight($period[$val['time']],$options['textsize']) + $options['betweenmargin'];
-            $ccol=gettextwidth($val['name'],$options['textsize']);
-            $ccol=max($ccol,gettextwidth($period[$val['time']],$options['textsize']));
+            $crow=gettextheight($font,$val['name'],$options['textsize'])+ gettextheight($font,$period[$val['time']],$options['textsize']) + $options['betweenmargin'];
+            $ccol=gettextwidth($font,$val['name'],$options['textsize']);
+            $ccol=max($ccol,gettextwidth($font,$period[$val['time']],$options['textsize']));
             $curcol += $ccol;
             $currow = max($currow,$crow);
         }
@@ -168,8 +216,8 @@ if($ty == 1){
         $totwidth[$cnt]= $curcol;
         $cnt++;
     }
-    $titlewidth = gettextwidth($title,$options['titlesize']);
-    $titleheight = gettextheight($title,$options['titlesize']);
+    $titlewidth = gettextwidth($font,$title,$options['titlesize']);
+    $titleheight = gettextheight($font,$title,$options['titlesize']);
     $totalwidth=0;
     $totalheight=0;
 
@@ -199,7 +247,7 @@ if($ty == 1){
     $options['headertextcolor']=imagecolorallocate($image,$options['headertextcolor'][0],$options['headertextcolor'][1],$options['headertextcolor'][2]);
     $options['titlecolor']=imagecolorallocate($image,$options['titlecolor'][0],$options['titlecolor'][1],$options['titlecolor'][2]);
     imagefill($image,0,0,$options['backgroundcolor']);
-    writetext($image,($totalwidth - $titlewidth)/2,$options['heightmargin'],$title,$options['titlesize'],$options['titlecolor']);
+    writetext($font,$image,($totalwidth - $titlewidth)/2,$options['heightmargin'],$title,$options['titlesize'],$options['titlecolor']);
     $curx=0;
     $cury=0;
     $curx += $options['widthmargin'];
@@ -222,12 +270,12 @@ if($ty == 1){
 
     imagefill($image,$curx+1,$cury+1,$options['headercolor']);
     imagefill($image,$curx2+1,$cury+1,$options['headercolor']);
-    $w = gettextwidth($subjecttext,$options['headertextsize']) ;
-    $h = gettextheight($subjecttext,$options['headertextsize']) ;
-    writetext($image,$curx + $options['cellwidthmargin'] + ($col[0] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h - $options['betweenmargin']) / 2,$subjecttext,$options['headertextsize'],$options['headertextcolor']);
-    $w = gettextwidth($datetext,$options['headertextsize']) ;
-    $h = gettextheight($datetext,$options['headertextsize']) ;
-    writetext($image,$curx2 + $options['cellwidthmargin'] + ($col[1] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h  - $options['betweenmargin']) / 2,$datetext,$options['headertextsize'],$options['headertextcolor']);
+    $w = gettextwidth($font,$subjecttext,$options['headertextsize']) ;
+    $h = gettextheight($font,$subjecttext,$options['headertextsize']) ;
+    writetext($font,$image,$curx + $options['cellwidthmargin'] + ($col[0] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h - $options['betweenmargin']) / 2,$subjecttext,$options['headertextsize'],$options['headertextcolor']);
+    $w = gettextwidth($font,$datetext,$options['headertextsize']) ;
+    $h = gettextheight($font,$datetext,$options['headertextsize']) ;
+    writetext($font,$image,$curx2 + $options['cellwidthmargin'] + ($col[1] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h  - $options['betweenmargin']) / 2,$datetext,$options['headertextsize'],$options['headertextcolor']);
     $cury += $row[0] + $options['linethickness'] + 2*$options['cellheightmargin'];
     $begin = new DateTime($startdate );
     for($i=1,$j= $begin;$j<=$end;$j->modify("+1 day")){
@@ -236,21 +284,21 @@ if($ty == 1){
         if($options['isremoveweekend'] and ($j->format("w") == 5))continue;
         imagefill($image,$curx+1,$cury+1,$options['cellcolor']);
         imagefill($image,$curx2+1,$cury+1,$options['cellcolor']);
-        $w2 = gettextwidth($j->format("Y/m/d"),$options['textsize']) ;
-        $w = gettextwidth($dayweek[$j->format("w")],$options['textsize']);
-        $h2 = gettextheight($j->format("Y/m/d"),$options['textsize']);
-        $h = gettextheight($dayweek[$j->format("w")],$options['textsize']);
-        writetext($image,$curx2 + $options['cellwidthmargin'] + ($col[1] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2,$dayweek[$j->format("w")],$options['textsize'],$options['textcolor']);
-        writetext($image,$curx2 + $options['cellwidthmargin'] + ($col[1] - $w2) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2 + $h + $options['betweenmargin'] ,$j->format("Y/m/d"),$options['textsize'],$options['textcolor']);
+        $w2 = gettextwidth($font,$j->format("Y/m/d"),$options['textsize']) ;
+        $w = gettextwidth($font,$dayweek[$j->format("w")],$options['textsize']);
+        $h2 = gettextheight($font,$j->format("Y/m/d"),$options['textsize']);
+        $h = gettextheight($font,$dayweek[$j->format("w")],$options['textsize']);
+        writetext($font,$image,$curx2 + $options['cellwidthmargin'] + ($col[1] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2,$dayweek[$j->format("w")],$options['textsize'],$options['textcolor']);
+        writetext($font,$image,$curx2 + $options['cellwidthmargin'] + ($col[1] - $w2) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2 + $h + $options['betweenmargin'] ,$j->format("Y/m/d"),$options['textsize'],$options['textcolor']);
         $cx= $curx + $options['cellwidthmargin'] + ($col[0] - $totwidth[$i]) / 2;
         $cy= $cury + $options['cellheightmargin'];
         foreach($subject as $key=>$val){
-            $w = gettextwidth($val['name'],$options['textsize']);
-            $w2 = gettextwidth($period[$val['time']],$options['textsize']);
-            $h = gettextheight($val['name'],$options['textsize']);
-            $h2 = gettextheight($period[$val['time']],$options['textsize']);
-            writetext($image,$cx + (max($w,$w2)-$w)/2, $cy ,$val['name'],$options['textsize'],$options['textcolor']);
-            writetext($image,$cx + (max($w,$w2)-$w2)/2, $cy + $h + $options['betweenmargin'] ,$period[$val['time']],$options['textsize'],$options['textcolor']);
+            $w = gettextwidth($font,$val['name'],$options['textsize']);
+            $w2 = gettextwidth($font,$period[$val['time']],$options['textsize']);
+            $h = gettextheight($font,$val['name'],$options['textsize']);
+            $h2 = gettextheight($font,$period[$val['time']],$options['textsize']);
+            writetext($font,$image,$cx + (max($w,$w2)-$w)/2, $cy ,$val['name'],$options['textsize'],$options['textcolor']);
+            writetext($font,$image,$cx + (max($w,$w2)-$w2)/2, $cy + $h + $options['betweenmargin'] ,$period[$val['time']],$options['textsize'],$options['textcolor']);
             $cx += max($w,$w2) + $options['subjectwidthmargin'];
         }
         $cury += $row[$i] + $options['linethickness'] + 2*$options['cellheightmargin'];
@@ -317,15 +365,15 @@ if($ty == 1){
     }
     #$colind = array_reverse($colind);
     $row=array();
-    $row[0]=gettextheight($datetext,$options['headertextsize']);
+    $row[0]=gettextheight($font,$datetext,$options['headertextsize']);
 
     for($i =0 ;$i<$cntcol;$i++){
-        $col[$i]=max(gettextwidth($periodtext,$options['headertextsize']),gettextwidth($period[$colind[$cntcol - $i]],$options['headertextsize']));
-        $row[0]=max($row[0],gettextheight($periodtext,$options['headertextsize'])+ $options['betweenmargin'] +gettextheight($period[$colind[$cntcol - $i]],$options['headertextsize']));
+        $col[$i]=max(gettextwidth($font,$periodtext,$options['headertextsize']),gettextwidth($font,$period[$colind[$cntcol - $i]],$options['headertextsize']));
+        $row[0]=max($row[0],gettextheight($font,$periodtext,$options['headertextsize'])+ $options['betweenmargin'] +gettextheight($font,$period[$colind[$cntcol - $i]],$options['headertextsize']));
     }
 
-    $col[$cntcol]=gettextwidth($datetext,$options['textsize']);
-    $row[0]=max($row[0],gettextheight($datetext,$options['textsize']));
+    $col[$cntcol]=gettextwidth($font,$datetext,$options['textsize']);
+    $row[0]=max($row[0],gettextheight($font,$datetext,$options['textsize']));
     $totwidth=array();
     $begin = new DateTime($startdate );
     $end   = new DateTime( $enddate );
@@ -336,18 +384,18 @@ if($ty == 1){
         $subject = findbydate2($i);
         if($options['isremoveempty'] and $subject == false)continue;
         if($options['isremoveweekend'] and ($i->format("w") == 5))continue;
-        $row[$cnt]=gettextheight($i->format("Y/m/d"),$options['textsize']) + $options['betweenmargin'] + gettextheight($dayweek[$i->format("w")],$options['textsize']);
-        $col[$cntcol]=max($col[$cntcol],gettextwidth($i->format("Y/m/d"),$options['textsize']));
-        $col[$cntcol]=max($col[$cntcol],gettextwidth($dayweek[$i->format("w")],$options['textsize']));
+        $row[$cnt]=gettextheight($font,$i->format("Y/m/d"),$options['textsize']) + $options['betweenmargin'] + gettextheight($font,$dayweek[$i->format("w")],$options['textsize']);
+        $col[$cntcol]=max($col[$cntcol],gettextwidth($font,$i->format("Y/m/d"),$options['textsize']));
+        $col[$cntcol]=max($col[$cntcol],gettextwidth($font,$dayweek[$i->format("w")],$options['textsize']));
 
         for($j = 0;$j <$cntcol;$j++){
             $subject = findbydate($i, $colind[$cntcol -  $j ]);
             $currow=0;
             $curcol=0;
             foreach($subject as $key=>$val){
-                $crow=gettextheight($val['name'],$options['textsize']);
-                $ccol=gettextwidth($val['name'],$options['textsize']);
-                $ccol=max($ccol,gettextwidth($period[$val['time']],$options['textsize']));
+                $crow=gettextheight($font,$val['name'],$options['textsize']);
+                $ccol=gettextwidth($font,$val['name'],$options['textsize']);
+                $ccol=max($ccol,gettextwidth($font,$period[$val['time']],$options['textsize']));
                 $curcol += $ccol;
                 $currow = max($currow,$crow);
             }
@@ -359,8 +407,8 @@ if($ty == 1){
         }
         $cnt++;
     }
-    $titlewidth = gettextwidth($title,$options['titlesize']);
-    $titleheight = gettextheight($title,$options['titlesize']);
+    $titlewidth = gettextwidth($font,$title,$options['titlesize']);
+    $titleheight = gettextheight($font,$title,$options['titlesize']);
     $totalwidth=0;
     $totalheight=0;
 
@@ -390,7 +438,7 @@ if($ty == 1){
     $options['titlecolor']=imagecolorallocate($image,$options['titlecolor'][0],$options['titlecolor'][1],$options['titlecolor'][2]);
     $black=imagecolorallocate($image,0,0,0);
     imagefill($image,0,0,$options['backgroundcolor']);
-    writetext($image,($totalwidth - $titlewidth)/2,$options['heightmargin'],$title,$options['titlesize'],$options['titlecolor']);
+    writetext($font,$image,($totalwidth - $titlewidth)/2,$options['heightmargin'],$title,$options['titlesize'],$options['titlecolor']);
     $curx=0;
     $cury=0;
     $curx += $options['widthmargin'];
@@ -412,18 +460,18 @@ if($ty == 1){
     $cury = $options['heightmargin'] + $options['linethickness'] +  $titleheight + $options['titletablemargin'];
     for($i=0;$i<$cntcol;$i++){
         imagefill($image,$curx+1,$cury+1,$options['headercolor']);
-        $w = gettextwidth($periodtext,$options['headertextsize']) ;
-        $h = gettextheight($periodtext,$options['headertextsize']) ;
-        $h2 = gettextheight($period[$colind[$cntcol-$i]],$options['headertextsize']);
-        $w2 = gettextwidth($period[$colind[$cntcol-$i]],$options['headertextsize']);
-        writetext($image,$curx + $options['cellwidthmargin'] + ($col[$i] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h - $h2 - $options['betweenmargin']) / 2,$periodtext,$options['headertextsize'],$options['headertextcolor']);
-        writetext($image,$curx + $options['cellwidthmargin'] + ($col[$i] - $w2) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h - $h2 - $options['betweenmargin']) / 2 + $h + $options['betweenmargin'],$period[$colind[$cntcol-$i]],$options['headertextsize'],$options['headertextcolor']);
+        $w = gettextwidth($font,$periodtext,$options['headertextsize']) ;
+        $h = gettextheight($font,$periodtext,$options['headertextsize']) ;
+        $h2 = gettextheight($font,$period[$colind[$cntcol-$i]],$options['headertextsize']);
+        $w2 = gettextwidth($font,$period[$colind[$cntcol-$i]],$options['headertextsize']);
+        writetext($font,$image,$curx + $options['cellwidthmargin'] + ($col[$i] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h - $h2 - $options['betweenmargin']) / 2,$periodtext,$options['headertextsize'],$options['headertextcolor']);
+        writetext($font,$image,$curx + $options['cellwidthmargin'] + ($col[$i] - $w2) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h - $h2 - $options['betweenmargin']) / 2 + $h + $options['betweenmargin'],$period[$colind[$cntcol-$i]],$options['headertextsize'],$options['headertextcolor']);
         $curx += $col[$i] + 2*$options['cellwidthmargin'] + $options['linethickness'];
     }
     imagefill($image,$curx+1,$cury+1,$options['headercolor']);
-    $w = gettextwidth($datetext,$options['headertextsize']) ;
-    $h = gettextheight($datetext,$options['headertextsize']) ;
-    writetext($image,$curx + $options['cellwidthmargin'] + ($col[$cntcol] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h) / 2,$datetext,$options['headertextsize'],$options['headertextcolor']);
+    $w = gettextwidth($font,$datetext,$options['headertextsize']) ;
+    $h = gettextheight($font,$datetext,$options['headertextsize']) ;
+    writetext($font,$image,$curx + $options['cellwidthmargin'] + ($col[$cntcol] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[0] - $h) / 2,$datetext,$options['headertextsize'],$options['headertextcolor']);
 
 
     $cury += $row[0] + $options['linethickness'] + 2*$options['cellheightmargin'];
@@ -439,21 +487,21 @@ if($ty == 1){
             $cx= $curx + $options['cellwidthmargin'] + ($col[$k] - $totwidth[$i][$k]) / 2;
             $cy= $cury + $options['cellheightmargin'];
             foreach($subject as $key=>$val){
-                $w = gettextwidth($val['name'],$options['textsize']);
-                $h = gettextheight($val['name'],$options['textsize']);
-                writetext($image,$cx , $cy + ($row[$i] - $h)/2 ,$val['name'],$options['textsize'],$options['textcolor']);
+                $w = gettextwidth($font,$val['name'],$options['textsize']);
+                $h = gettextheight($font,$val['name'],$options['textsize']);
+                writetext($font,$image,$cx , $cy + ($row[$i] - $h)/2 ,$val['name'],$options['textsize'],$options['textcolor']);
                 $cx += $w + $options['subjectwidthmargin'];
 
             }
             $curx += $col[$k] + 2 * $options['cellwidthmargin'] + $options['linethickness'];
         }
         imagefill($image,$curx+1,$cury+1,$options['cellcolor']);
-        $w2 = gettextwidth($j->format("Y/m/d"),$options['textsize']) ;
-        $w = gettextwidth($dayweek[$j->format("w")],$options['textsize']);
-        $h2 = gettextheight($j->format("Y/m/d"),$options['textsize']);
-        $h = gettextheight($dayweek[$j->format("w")],$options['textsize']);
-        writetext($image,$curx + $options['cellwidthmargin'] + ($col[$cntcol] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2,$dayweek[$j->format("w")],$options['textsize'],$options['textcolor']);
-        writetext($image,$curx + $options['cellwidthmargin'] + ($col[$cntcol] - $w2) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2 + $h + $options['betweenmargin'] ,$j->format("Y/m/d"),$options['textsize'],$options['textcolor']);
+        $w2 = gettextwidth($font,$j->format("Y/m/d"),$options['textsize']) ;
+        $w = gettextwidth($font,$dayweek[$j->format("w")],$options['textsize']);
+        $h2 = gettextheight($font,$j->format("Y/m/d"),$options['textsize']);
+        $h = gettextheight($font,$dayweek[$j->format("w")],$options['textsize']);
+        writetext($font,$image,$curx + $options['cellwidthmargin'] + ($col[$cntcol] - $w) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2,$dayweek[$j->format("w")],$options['textsize'],$options['textcolor']);
+        writetext($font,$image,$curx + $options['cellwidthmargin'] + ($col[$cntcol] - $w2) / 2, $cury + $options['cellheightmargin'] + ($row[$i] - $h - $h2 - $options['betweenmargin']) / 2 + $h + $options['betweenmargin'] ,$j->format("Y/m/d"),$options['textsize'],$options['textcolor']);
 
 
         $cury += $row[$i] + $options['linethickness'] + 2*$options['cellheightmargin'];

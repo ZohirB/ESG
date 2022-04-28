@@ -26,27 +26,27 @@
         echo"<div class='subjects'>";
         echo"<h2 class='h2-1' aria-hidden='true' type='button'>اختر المواد</h2>";
 
-        echo"<h2 class='First_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(FirstYear)'>السنة الأولى</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FirstYear)'>السنة الأولى</h2>";
         echo"<div id='FirstYear'>";
         print_labels(1,1,200,7);
         echo"</div>";
         
-        echo"<h2 class='Second_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(SecondYear)'>السنة الثانية</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(SecondYear)'>السنة الثانية</h2>";
         echo"<div id='SecondYear'>";
         print_labels(2,3,202,21);
         echo"</div>";
 
-        echo"<h2 class='Third_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(ThirdYear)'>السنة الثالثة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(ThirdYear)'>السنة الثالثة</h2>";
         echo"<div id='ThirdYear'>";
             print_labels(3,5,204,35);
         echo"</div>";
 
-        echo"<h2 class='Fourth_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(FourthYear)'>السنة الرابعة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FourthYear)'>السنة الرابعة</h2>";
         echo"<div id='FourthYear'>";
         print_labels(4,7,206,50);
         echo"</div>";
 
-        echo"<h2 class='Fifth_Year h2-2' aria-hidden='true' type='button' onclick='DropDown(FifthYear)'>السنة الخامسة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FifthYear)'>السنة الخامسة</h2>";
         echo"<div id='FifthYear'>";
         print_labels(5,9,208,64);
         echo"</div>";
@@ -67,27 +67,63 @@
         echo"</div>";
         echo"</div>";
 
+        echo"<div class='container'>";   
+        echo"<div class='fonti'>";
+        echo"<h2 class='h2-1' aria-hidden='true' type='button'>اختر تنسيق الخط</h2>";
+        
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_1)'>الخط رقم 1</h2>";
+        echo"<div id='Font_1'>";
+        echo"<input type='radio' input id='401' name='font' value='1' checked='checked'>";
+        echo"<label for='401'>الخط رقم 1 (Regular)</label>";
+        echo"</div>";
+
+
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_2)'>الخط رقم 2</h2>";
+        echo"<div id='Font_2'>";
+        echo"<input type='radio' id='402' name='font' value='2'>";
+        echo"<label for='402'>الخط رقم 2 (Light)</label>";
+        echo"<input type='radio' id='403' name='font' value='3'>";
+        echo"<label for='403'>الخط رقم 2 (Bold)</label>";
+        echo"</div>";
+
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_3)'>الخط رقم 3</h2>";
+        echo"<div id='Font_3'>";
+        echo"<input type='radio' id='404' name='font' value='4'>";
+        echo"<label for='404'>الخط رقم 3 (Light)</label>";
+        echo"<input type='radio' id='405' name='font' value='5'>";
+        echo"<label for='405'>الخط رقم 3 (Bold)</label>";
+        echo"</div>";
+
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_4)'>الخط رقم 4</h2>";
+        echo"<div id='Font_4'>";
+        echo"<input type='radio' id='406' name='font' value='6'>";
+        echo"<label for='406'>الخط رقم 4 (Bold)</label>";
+        echo"</div>";
+
+        echo"</div>";
+        echo"</div>";
+
         echo"<div class='container'>";
         echo"<div class='theme'>";
         echo"<h2 class='h2-1'>اختر لون الجدول</h2>";
 
-        echo"<input type='radio' id='154' name='design' value='5' checked='checked'>";
-        echo"<label for='154'>اللون البنفسجي</label>";
+        echo"<input type='radio' id='500' name='design' value='5' checked='checked'>";
+        echo"<label for='500'>اللون البنفسجي</label>";
 
-        echo"<input type='radio' id='150' name='design' value='1'>";
-        echo"<label for='150'>اللون الازرق</label>";
+        echo"<input type='radio' id='501' name='design' value='1'>";
+        echo"<label for='501'>اللون الازرق</label>";
 
-        echo"<input type='radio' id='151' name='design' value='2'>";
-        echo"<label for='151'>اللون الاسود</label>";
+        echo"<input type='radio' id='502' name='design' value='2'>";
+        echo"<label for='502'>اللون الاسود</label>";
 
-        echo"<input type='radio' id='152' name='design' value='3'>";
-        echo"<label for='152'>اللون الزهري</label>";
+        echo"<input type='radio' id='503' name='design' value='3'>";
+        echo"<label for='503'>اللون الزهري</label>";
         
-        echo"<input type='radio' id='153' name='design' value='4'>";
-        echo"<label for='153'>اللون الاخضر</label>";
+        echo"<input type='radio' id='504' name='design' value='4'>";
+        echo"<label for='504'>اللون الاخضر</label>";
         
-        echo"<input type='radio' id='155' name='design' value='6'>";
-        echo"<label for='155'>اللون X</label>";
+        echo"<input type='radio' id='505' name='design' value='6'>";
+        echo"<label for='505'>اللون X</label>";
 
         echo"</div>";
         echo"</div>";
@@ -113,11 +149,15 @@
         } else {
             $ty = 2;
             $design = 1;
+            $font = 1;
             if (array_key_exists('ty', $_POST)) {
                 $ty = intval($_POST['ty']);
             }
             if (array_key_exists('design', $_POST)) {
                 $design = intval($_POST['design']);
+            }
+            if (array_key_exists('font', $_POST)) {
+                $font = intval($_POST['font']);
             }
             $res = mysqli_connect($db_host, $db_user, $db_pass);
             mysqli_select_db($res, $db_name);
@@ -130,7 +170,7 @@
                     $selected[] = intval($val);
                 }
             }
-            mysqli_query($res, "INSERT INTO `schedule` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "')");
+            mysqli_query($res, "INSERT INTO `schedule` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "')");
             //echo mysqli_error($res);
             header('location: create.php?code=' . $cd);
         }

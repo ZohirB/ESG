@@ -5,6 +5,10 @@
 #FourthYear {display: none;}
 #FifthYear {display: none;}
 
+#Font_1 {display: none;}
+#Font_2 {display: none;}
+#Font_3 {display: none;}
+#Font_4 {display: none;}
 
 /* CSS Button */
 .button-18 {
@@ -69,6 +73,12 @@
 }
 
 .theme {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.fonti{
   display: flex;
   flex-direction: column;
   padding: 20px;

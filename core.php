@@ -1,37 +1,25 @@
 <?php
+
+use ArPHP\I18N\Arabic;
+
 include('I18N/Arabic.php');
-$Arabic = new I18N_Arabic('ArGlyphs');
-function gettextwidth($str,$size){
-    global $Arabic;
-    $str = $Arabic->utf8Glyphs($str,10000,false);
-    $local = $_SERVER['SCRIPT_FILENAME'];
-    $pos   = strrpos($local, '/');
-    $path  = substr($local, 0, $pos);
-    $font  = $path.'/a.ttf';
-    //$font  = $path.'/Tajawal-Bold.ttf';
+$Arabica = new Arabic('ArGlyphs');
+function gettextwidth($font,$str,$size){
+    global $Arabica;
+    $str = $Arabica->utf8Glyphs($str,10000,false,false);
     $g = imageftbbox($size,0,$font,$str);
     return $g[2]-$g[0];
 }
-function gettextheight($str,$size){
-    global $Arabic;
-    $str = $Arabic->utf8Glyphs($str,10000,false);
-    $local = $_SERVER['SCRIPT_FILENAME'];
-    $pos   = strrpos($local, '/');
-    $path  = substr($local, 0, $pos);
-    $font  = $path.'/a.ttf';
-    //$font  = $path.'/Tajawal-Bold.ttf';
+function gettextheight($font,$str,$size){
+    global $Arabica;
+    $str = $Arabica->utf8Glyphs($str,10000,false,false);
     $g = imageftbbox($size,0,$font,$str);
     return $g[3]-$g[5];
 }
 
-function writetext($image,$x,$y,$str,$size,$color){
-    global $Arabic;
-    $str = $Arabic->utf8Glyphs($str,10000,false);
-    $local = $_SERVER['SCRIPT_FILENAME'];
-    $pos   = strrpos($local, '/');
-    $path  = substr($local, 0, $pos);
-    $font  = $path.'/a.ttf';
-    //$font  = $path.'/Tajawal-Bold.ttf';
+function writetext($font,$image,$x,$y,$str,$size,$color){
+    global $Arabica;
+    $str = $Arabica->utf8Glyphs($str,10000,false,false);
     $g = imageftbbox($size,0,$font,$str);
     imagefttext($image,$size,0,$x - $g[6],$y - $g[7],$color,$font,$str);
     return $g[2]-$g[0];
