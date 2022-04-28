@@ -1,6 +1,9 @@
 <?php
+
+use ArPHP\I18N\Arabic;
+
 include('I18N/Arabic.php');
-$Arabic = new I18N_Arabic('ArGlyphs');
+$Arabic = new Arabic('ArGlyphs');
 function gettextwidth($str,$size){
     global $Arabic;
     $str = $Arabic->utf8Glyphs($str,10000,false);
