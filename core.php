@@ -3,7 +3,7 @@
 use ArPHP\I18N\Arabic;
 
 include('I18N/Arabic.php');
-$Arabica = new Arabic('ArGlyphs');
+$Arabica = new Arabic ('ArGlyphs');
 function gettextwidth($font,$str,$size){
     global $Arabica;
     $str = $Arabica->utf8Glyphs($str,10000,false,false);
