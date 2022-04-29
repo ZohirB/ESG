@@ -1,37 +1,46 @@
+
 function DropDown(info){
-    if (info === FirstYear){
-      var moreText = document.getElementById("FirstYear");  
-    } else if (info === SecondYear){
-      var moreText = document.getElementById("SecondYear");  
-    } else if (info === ThirdYear){
-      var moreText = document.getElementById("ThirdYear");  
-    } else if (info === FourthYear){
-      var moreText = document.getElementById("FourthYear");  
-    } else if (info === FifthYear){
-      var moreText = document.getElementById("FifthYear");  
+    var years = [FirstYear,SecondYear,ThirdYear,FourthYear,FifthYear];
+    for (var i=0 ; i < years.length ; i++){
+      if (info == years[i]){
+        if (years[i].style.display == "inline") 
+          years[i].style.display = "none";
+        else 
+          years[i].style.display = "inline";
+      }
+      else {
+        years[i].style.display = "none";
+      }
     }
-    
-    if (moreText.style.display === "inline") {
-      moreText.style.display = "none";
-    } else {
-      moreText.style.display = "inline";
-    }
-  }
+}
+
 function DropDown_Font(info){
-  if (info === Font_1){
-    var moreText = document.getElementById("Font_1");  
-  } else if (info === Font_2){
-    var moreText = document.getElementById("Font_2");  
-  } else if (info === Font_3){
-    var moreText = document.getElementById("Font_3");  
-  } else if (info === Font_4){
-    var moreText = document.getElementById("Font_4");  
+  var fonts = [Font_1,Font_2,Font_3];
+  for (var i=0 ; i < fonts.length ; i++){
+    if (info === fonts[i]){
+      if (fonts[i].style.display === "inline") 
+        fonts[i].style.display = "none";
+      else 
+        fonts[i].style.display = "inline";
+    }
+    else {
+      fonts[i].style.display = "none";
+    }
   }
-  
-  if (moreText.style.display === "inline") {
-    moreText.style.display = "none";
-  } else {
-    moreText.style.display = "inline";
+}
+
+function DropDown_design(info){
+  var designs = [New_design,Old_design];
+  for (var i=0 ; i < designs.length ; i++){
+    if (info === designs[i]){
+      if (designs[i].style.display === "inline") 
+        designs[i].style.display = "none";
+      else 
+        designs[i].style.display = "inline";
+    }
+    else {
+      designs[i].style.display = "none";
+    }
   }
 }
 
@@ -58,3 +67,33 @@ function checkboxes_inc(){
   }
   document.getElementById('crazyoutput').textContent = "عدد المواد المحددة (" + count + ")";
 }
+
+/*
+function DropDown(ty,info){
+  const years = [FirstYear,SecondYear,ThirdYear,FourthYear,FifthYear];
+  const fonts = [Font_1,Font_2,Font_3,Font_4];
+  const designs = [New_design,Old_design];
+  var moreText;
+  if (ty == "year"){
+    moreText = years.slice();
+  }
+  else if (ty == "font"){
+    moreText = fonts.slice();
+  }
+  else if (ty == "design"){
+    moreText = designs.slice();
+  }
+  for (var i=0 ; i < moreText.length ; i++){
+    if (info == years[i]){
+      if (moreText[i].style.display == "inline") 
+        moreText[i].style.display = "none";
+      else 
+        moreText[i].style.display = "inline";
+    }
+    else {
+      moreText[i].style.display = "none";
+    }
+  }
+}
+
+*/

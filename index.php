@@ -10,10 +10,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/stylemain.css">
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="css/stylemain.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_qm.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script class="u-script" type="text/javascript" src="JavaScript/function.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="JavaScript/main.js" defer=""></script>
     <title>Neat schedule 2.0</title>
 </head>
 <body>
@@ -22,7 +24,17 @@
         echo "<form method='post'>";
         echo"<div class='container'>";
         echo"<h1>مولد برنامج الفحص الخاص بكلية الهندسة المعلوماتية بجامعة حلب</h1>";
-        
+/*
+        echo"<div class='subjects'>";
+        echo"<div id='arrow-left' class='arrow'></div>";
+        echo"<div class='slide slide1'></div>";
+        echo"<div class='slide slide2'></div>";
+        echo"<div class='slide slide3'></div>";
+        echo"<div id='arrow-right' class='arrow'></div>";
+        echo"</div>";
+        echo"</div>";
+*/        
+        echo"<div class='container'>";
         echo"<div class='subjects'>";
         echo"<h2 class='h2-1' aria-hidden='true' type='button'>اختر المواد</h2>";
 
@@ -70,61 +82,14 @@
         echo"<div class='container'>";   
         echo"<div class='fonti'>";
         echo"<h2 class='h2-1' aria-hidden='true' type='button'>اختر تنسيق الخط</h2>";
-        
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_1)'>الخط رقم 1</h2>";
-        echo"<div id='Font_1'>";
-        echo"<input type='radio' input id='401' name='font' value='1' checked='checked'>";
-        echo"<label for='401'>الخط رقم 1 (Regular)</label>";
-        echo"</div>";
-
-
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_2)'>الخط رقم 2</h2>";
-        echo"<div id='Font_2'>";
-        echo"<input type='radio' id='402' name='font' value='2'>";
-        echo"<label for='402'>الخط رقم 2 (Light)</label>";
-        echo"<input type='radio' id='403' name='font' value='3'>";
-        echo"<label for='403'>الخط رقم 2 (Bold)</label>";
-        echo"</div>";
-
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_3)'>الخط رقم 3</h2>";
-        echo"<div id='Font_3'>";
-        echo"<input type='radio' id='404' name='font' value='4'>";
-        echo"<label for='404'>الخط رقم 3 (Light)</label>";
-        echo"<input type='radio' id='405' name='font' value='5'>";
-        echo"<label for='405'>الخط رقم 3 (Bold)</label>";
-        echo"</div>";
-
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_4)'>الخط رقم 4</h2>";
-        echo"<div id='Font_4'>";
-        echo"<input type='radio' id='406' name='font' value='6'>";
-        echo"<label for='406'>الخط رقم 4 (Bold)</label>";
-        echo"</div>";
-
+        print_font_label();
         echo"</div>";
         echo"</div>";
 
         echo"<div class='container'>";
         echo"<div class='theme'>";
         echo"<h2 class='h2-1'>اختر لون الجدول</h2>";
-
-        echo"<input type='radio' id='500' name='design' value='5' checked='checked'>";
-        echo"<label for='500'>اللون البنفسجي</label>";
-
-        echo"<input type='radio' id='501' name='design' value='1'>";
-        echo"<label for='501'>اللون الازرق</label>";
-
-        echo"<input type='radio' id='502' name='design' value='2'>";
-        echo"<label for='502'>اللون الاسود</label>";
-
-        echo"<input type='radio' id='503' name='design' value='3'>";
-        echo"<label for='503'>اللون الزهري</label>";
-        
-        echo"<input type='radio' id='504' name='design' value='4'>";
-        echo"<label for='504'>اللون الاخضر</label>";
-        
-        echo"<input type='radio' id='505' name='design' value='6'>";
-        echo"<label for='505'>اللون X</label>";
-
+        print_design_label();
         echo"</div>";
         echo"</div>";
 

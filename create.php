@@ -102,52 +102,79 @@ if($design == 1){
     $options['titlecolor']=array(0xFF,0xFF,0xFF);//array(0x88,0xC4,0x64)
     $options['headertextcolor']=array(0xFF,0xFF,0xFF);
     $options['textcolor']=array(0x16,0x23,0x5A); //array(0xF2,0xEA,0xED)
-} else if ($design == 6){
-    $options['backgroundcolor']=array(0xA4,0xA4,0xBF);
+} else if ($design == 6){  //005555,069A8E
+    $options['backgroundcolor']=array(0x06,0x9a,0x8e); //5c868d
+    $options['cellcolor']=array(0xff,0xff,0xff); 
+    $options['headercolor']=array(0x00,0x55,0x55);
+    $options['linecolor']=array(0x00,0x55,0x55); //005555
+    $options['titlecolor']=array(0xff,0xff,0xff); 
+    $options['headertextcolor']=array(0xFF,0xFF,0xFF); 
+    $options['textcolor']=array(0x03,0x35,0x3e); 
+} else if ($design == 7){  //3F72AF,112D4E,DBE2EF
+    $options['backgroundcolor']=array(0x3f,0x72,0xaf); //EAEA7F
     $options['cellcolor']=array(0xF2,0xEA,0xED); 
-    $options['headercolor']=array(0x2A,0x34,0x57);
-    $options['linecolor']=array(0x2A,0x34,0x57);
-    $options['titlecolor']=array(0xFF,0xFF,0xFF);
+    $options['headercolor']=array(0x11,0x2d,0x4e);
+    $options['linecolor']=array(0x11,0x2d,0x4e); //333C83
+    $options['titlecolor']=array(0xff,0xff,0xff); 
+    $options['headertextcolor']=array(0xFF,0xFF,0xFF); //c1403d
+    $options['textcolor']=array(0x11,0x2d,0x4e); //04060f//a79c93
+} else if ($design == 8){  //62D2A2,1FAB89,65C18C
+    $options['backgroundcolor']=array(0x62,0xd2,0xa2); 
+    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['headercolor']=array(0x1f,0xab,0x89);
+    $options['linecolor']=array(0x1f,0xab,0x89);
+    $options['titlecolor']=array(0xff,0xff,0xff); 
     $options['headertextcolor']=array(0xFF,0xFF,0xFF);
-    $options['textcolor']=array(0x16,0x23,0x5A); 
+    $options['textcolor']=array(0x0d,0x73,0x77); 
 }
+
+/*
+    أزرق نص غامق
+    $options['backgroundcolor']=array(0x02,0x94,0xa5); //0294a5
+    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['headercolor']=array(0x03,0x35,0x3e);
+    $options['linecolor']=array(0x03,0x35,0x3e); //03353e
+    $options['titlecolor']=array(0xff,0xff,0xff); 
+    $options['headertextcolor']=array(0xFF,0xFF,0xFF); //c1403d
+    $options['textcolor']=array(0x04,0x06,0x0f); //04060f//a79c93
+*/
 
 $local = $_SERVER['SCRIPT_FILENAME'];
 $pos   = strrpos($local, '/');
 $path  = substr($local, 0, $pos);
 
 if ($font == 1){
-    $font  = $path.'/font_php/1.ttf';
+    $font  = $path.'/css/fonts/font_php/1.ttf';
     $options['widthmargin']=300;
     $options['textsize']=20;
     $options['headertextsize']=33;
     $options['titlesize']=40;  
 } else if ($font == 2){
-    $font  = $path.'/font_php/2.ttf';
+    $font  = $path.'/css/fonts/font_php/2.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
     $options['titlesize']=45;  
 } else if ($font == 3){
-    $font  = $path.'/font_php/3.ttf';
+    $font  = $path.'/css/fonts/font_php/3.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
     $options['titlesize']=45;  
 } else if ($font == 4){
-    $font  = $path.'/font_php/4.ttf';
+    $font  = $path.'/css/fonts/font_php/4.ttf';
     $options['widthmargin']=350;
     $options['textsize']=30;
     $options['headertextsize']=40;
     $options['titlesize']=55;  
 } else if ($font == 5){
-    $font  = $path.'/font_php/5.ttf';
+    $font  = $path.'/css/fonts/font_php/5.ttf';
     $options['widthmargin']=400;
     $options['textsize']=28;
     $options['headertextsize']=38;
     $options['titlesize']=49;  
 } else if ($font == 6){
-    $font  = $path.'/font_php/6.ttf';
+    $font  = $path.'/css/fonts/font_php/6.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;

@@ -5,10 +5,26 @@
 #FourthYear {display: none;}
 #FifthYear {display: none;}
 
-#Font_1 {display: none;}
-#Font_2 {display: none;}
-#Font_3 {display: none;}
-#Font_4 {display: none;}
+#Font_1 {
+  display: none;
+  font-family: 1;
+}
+#Font_2 {
+  display: none;
+  font-family: 2;
+}
+#Font_3 {
+  display: none;
+  font-family: 3;
+}
+#Font_4 {
+  display: none;
+  font-family: 4;
+}
+
+
+#New_design {display: none;}
+#Old_design {display: none;}
 
 /* CSS Button */
 .button-18 {
@@ -116,4 +132,28 @@
   font-style: normal;
   font-weight: 400;
   src: url(fonts/Arvo-Regular.ttf);
+}
+@font-face {
+  font-family: '1';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/1.ttf);
+}
+@font-face {
+  font-family: '2';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/2.ttf);
+}
+@font-face {
+  font-family: '3';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/4.ttf);
+}
+@font-face {
+  font-family: '4';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/6.ttf);
 }
