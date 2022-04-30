@@ -94,6 +94,13 @@
         echo"</div>";
 
         echo"<div class='container'>";
+        echo"<div class='cl'>";
+        echo"<h2 class='h2-1'>اختر طبيعة الجدول</h2>";
+        print_na_label();
+        echo"</div>";
+        echo"</div>";
+
+        echo"<div class='container'>";
         echo"<div class='sub_button'>";
         echo"<button input type='submit' class='button-18'>توليد الجدول</button>";
 
@@ -115,6 +122,7 @@
             $ty = 2;
             $design = 1;
             $font = 1;
+            $na = 1;
             if (array_key_exists('ty', $_POST)) {
                 $ty = intval($_POST['ty']);
             }
@@ -123,6 +131,9 @@
             }
             if (array_key_exists('font', $_POST)) {
                 $font = intval($_POST['font']);
+            }
+            if (array_key_exists('na', $_POST)) {
+                $na = intval($_POST['na']);
             }
             $res = mysqli_connect($db_host, $db_user, $db_pass);
             mysqli_select_db($res, $db_name);
@@ -135,7 +146,7 @@
                     $selected[] = intval($val);
                 }
             }
-            mysqli_query($res, "INSERT INTO `schedule` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "')");
+            mysqli_query($res, "INSERT INTO `schedule` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "')");
             //echo mysqli_error($res);
             header('location: create.php?code=' . $cd);
         }

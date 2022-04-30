@@ -91,4 +91,10 @@
         echo"</div>";
         */
     }
+    function print_na_label(){
+        echo"<input type='radio' input id='601' name='na' value='1' checked='checked'>";
+        echo"<label for='601'>جدول مختصر</label>";
+        echo"<input type='radio' input id='602' name='na' value='2'>";
+        echo"<label for='602'>جدول مفصل</label>";
+    }
 ?>

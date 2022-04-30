@@ -42,6 +42,7 @@ if($selected[0]==""){
 $design =$r['design'] ;
 $ty=$r['format'];
 $font=$r['font'];
+$na=$r['na'];
 
 if($design == 1){
     $options['backgroundcolor']=array(0xa9,0xc2,0xeF);
@@ -181,7 +182,13 @@ if ($font == 1){
     $options['titlesize']=45;  
 }
 
-
+if ($na == 1){
+    $options['isremoveempty']=true;
+    $options['isremoveweekend']=false;
+} else if ($na == 2) {
+    $options['isremoveempty']=false;
+    $options['isremoveweekend']=false;
+}
 
 if($ty == 1){
     function findbydate($date){

@@ -88,13 +88,19 @@
   padding: 20px;
 }
 
+.fonti{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
 .theme {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-.fonti{
+.cl {
   display: flex;
   flex-direction: column;
   padding: 20px;
