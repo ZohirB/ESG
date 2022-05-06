@@ -7,7 +7,6 @@
 
 #Font_1 {
   display: none;
-  font-family: 1;
 }
 #Font_2 {
   display: none;
@@ -131,6 +130,10 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, .1);
   user-select: none;
   text-align: left;
+}
+
+.font-1-regular{
+  font-family: 2 !important;
 }
 
 @font-face {
