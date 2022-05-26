@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/style_qm.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script class="u-script" type="text/javascript" src="JavaScript/function.js" defer=""></script>
-  <script class="u-script" type="text/javascript" src="JavaScript/main.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="js/function.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="js/main.js" defer=""></script>
     <title>Neat schedule 2.0</title>
 </head>
 <body>
