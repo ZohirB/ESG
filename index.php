@@ -1,7 +1,7 @@
 <?php
-    include("core.php");
-    include("schedule.php");
-    include("function.php");
+    include("php_Pages/core.php");
+    include("php_Pages/schedule.php");
+    include("php_Pages/function.php");
 ?>
 
 <!DOCTYPE html>
@@ -148,7 +148,7 @@
             }
             mysqli_query($res, "INSERT INTO `schedule` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "')");
             //echo mysqli_error($res);
-            header('location: create.php?code=' . $cd);
+            header('location: php_Pages/create.php?code=' . $cd);
         }
         ?>
     </body>

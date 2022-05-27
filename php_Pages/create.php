@@ -145,37 +145,37 @@ $pos   = strrpos($local, '/');
 $path  = substr($local, 0, $pos);
 
 if ($font == 1){
-    $font  = $path.'/css/fonts/font_php/1.ttf';
+    $font  = $path.'/../css/fonts/font_php/1.ttf';
     $options['widthmargin']=300;
     $options['textsize']=20;
     $options['headertextsize']=33;
     $options['titlesize']=40;  
 } else if ($font == 2){
-    $font  = $path.'/css/fonts/font_php/2.ttf';
+    $font  = $path.'/../css/fonts/font_php/2.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
     $options['titlesize']=45;  
 } else if ($font == 3){
-    $font  = $path.'/css/fonts/font_php/3.ttf';
+    $font  = $path.'/../css/fonts/font_php/3.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
     $options['titlesize']=45;  
 } else if ($font == 4){
-    $font  = $path.'/css/fonts/font_php/4.ttf';
+    $font  = $path.'/../css/fonts/font_php/4.ttf';
     $options['widthmargin']=350;
     $options['textsize']=30;
     $options['headertextsize']=40;
     $options['titlesize']=55;  
 } else if ($font == 5){
-    $font  = $path.'/css/fonts/font_php/5.ttf';
+    $font  = $path.'/../css/fonts/font_php/5.ttf';
     $options['widthmargin']=400;
     $options['textsize']=28;
     $options['headertextsize']=38;
     $options['titlesize']=49;  
 } else if ($font == 6){
-    $font  = $path.'/css/fonts/font_php/6.ttf';
+    $font  = $path.'/../css/fonts/font_php/6.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
