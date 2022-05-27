@@ -34,7 +34,7 @@ $data[]=array("name2"=>"خوارزميات (2)","name"=>"خوارزميات (2)"
 $data[]=array("name2"=>"معالج مصغر","name"=>"معالج مصغر", "time"=>t, "year"=>3,"date"=>"y/m/d");
 $data[]=array("name2"=>"معالجة اشارة","name"=>"معالجة اشارة", "time"=>t, "year"=>3,"date"=>"y/m/d");
 $data[]=array("name2"=>"قواعد معطيات  (1)","name"=>"قواعد معطيات  (1)", "time"=>t, "year"=>3,"date"=>"y/m/d");
-$data[]=array("name2"=>"رسوميات حاسوبية","name"=>"رسوميات حاسوبية", "time"=>t, "year"=>3,"date"=>"y/m/d");
+$data[]=array("name2"=>"رسوميات حاسوبية","name"=>"رسوميات حاسوبية", "time"=>t, "year"=>3,"date"=>"y/m/d";
 $data[]=array("name2"=>"نظرية معلومات","name"=>"نظرية معلومات", "time"=>t, "year"=>3,"date"=>"y/m/d");
 $data[]=array("name2"=>"نظرية المخططات","name"=>"نظرية المخططات", "time"=>t, "year"=>3,"date"=>"y/m/d");
 $data[]=array("name2"=>"شبكات حاسوبية","name"=>"شبكات حاسوبية", "time"=>t, "year"=>3,"date"=>"y/m/d") ;

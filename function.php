@@ -64,24 +64,24 @@
         echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_1)'>الخط رقم 1</h2>";
         echo"<div id='Font_1'>";
         echo"<input type='radio' input id='401' name='font' value='1' checked='checked'>";
-        echo"<label for='401'>الخط رقم 1 (Regular)</label>";
+        echo"<label for='401' class='font1'>الخط رقم 1 (Regular)</label>";
         echo"</div>";
 
 
         echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_2)'>الخط رقم 2</h2>";
         echo"<div id='Font_2'>";
-        echo"<input type='radio' id='402' name='font' value='2'>";
-        echo"<label for='402'>الخط رقم 2 (Light)</label>";
+        echo"<input type='radio' id='402' name='font' value='2' >";
+        echo"<label for='402' class='font2'>الخط رقم 2 (Light)</label>";
         echo"<input type='radio' id='403' name='font' value='3'>";
-        echo"<label for='403'>الخط رقم 2 (Bold)</label>";
+        echo"<label for='403' class='font3'>الخط رقم 2 (Bold)</label>";
         echo"</div>";
 
         echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_3)'>الخط رقم 3</h2>";
         echo"<div id='Font_3'>";
         echo"<input type='radio' id='404' name='font' value='4'>";
-        echo"<label for='404'>الخط رقم 3 (Light)</label>";
+        echo"<label for='404' class='font4'>الخط رقم 3 (Light)</label>";
         echo"<input type='radio' id='405' name='font' value='5'>";
-        echo"<label for='405'>الخط رقم 3 (Bold)</label>";
+        echo"<label for='405' class='font5'>الخط رقم 3 (Bold)</label>";
         echo"</div>";
         /*
         echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_4)'>الخط رقم 4</h2>";

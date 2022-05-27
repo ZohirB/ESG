@@ -1,160 +1,131 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  direction: rtl;
+#FirstYear {
+  display: none;
+}
+#SecondYear {
+  display: none;
+}
+#ThirdYear {
+  display: none;
+}
+#FourthYear {
+  display: none;
+}
+#FifthYear {
+  display: none;
 }
 
-html {
-  min-height: 100%;
+#Font_1 {
+  display: none;
+}
+#Font_2 {
+  display: none;
+}
+#Font_3 {
+  display: none;
+}
+#Font_4 {
+  display: none;
 }
 
-body {
-  margin: 20px;
-  color: #435757;
-  background: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%);
-  font: 500 1.2em/1.2 'Roboto', sans-serif;
+
+#New_design {
+  display: none;
+}
+#Old_design {
+  display: none;
 }
 
-.container {
-  max-width: 400px;
-  margin: 0 auto;
-  border-top: 5px solid #435757;
-  background-color: rgba(255, 255, 255, .2);
-  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-  user-select: none;
+
+/* items */
+.subjects {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  counter-reset: selected-subjects;
 }
 
-h1 {
-  margin: 0;
-  padding: 25Px;
-  background-color: rgba(255, 255, 255, .4);
-  font-size: 1.4em;
-  text-align: center;
+.format {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-/* h2-1 */
-.h2-1{
-  position: relative;
-  margin: 0;
-  padding: 10px 0;
-  font-size: 1.2em;
-}
-.h2-1::after{
-  content: '';
-  display: block;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  right: -20px;
-  width: 5px;
-  background-color: #435757;
-}
-.h2-1{
-  display: block;
-  float: left;
-  font-weight: normal;
+.fonti{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-/* h2-2 */
-.h2-2{
-  position: relative;
-  margin: 0;
-  padding: 10px 0;
-  font-size: 1.2em;
-  cursor: pointer;
+.font1{
+  font-family: '1';
 }
-.h2-2::after{
-  content: '';
-  display: block;
-  position: absolute;
-  top: 14px;
-  bottom: 14px;
-  right: -20px;
-  width: 4px;
-  background-color: #802929;
+.font2{
+  font-family: '2';
 }
-.h2-2{
-  display: block;
-  float: left;
-  font-weight: normal;
+.font3{
+  font-family: '3';
 }
-/*
-.First_Year {
-  order: 0;
+.font4{
+  font-family: '4';
 }
-.Second_Year {
-  order: 0;
-}
-.Third_Year{
-  order: 0;
-}
-.Fourth_Year {
-  order: 0;
-}
-.Fifth_Year {
-  order: 0;
-}
-.selected {order: 2;}
-*/
-
-.selected::before {content: ' (' counter(selected-subjects) ')';}
-
-/* hide inputs offscreen, but at the same vertical positions as the correpsonding labels, so that tabbing scrolls the viewport as expected */
-input {
-  display: block;
-  height: 53px;
-  margin: 0 -9999px -53px 0px;
-  /*order: 0;*/
-  outline: none;
+.font5{
+  font-family: '5';
 }
 
-input:checked {
-  /*order: 2;*/
-  counter-increment: selected-subjects;  
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-label {
-  display: block;
-  position: relative;
-  padding: 15px 45px 15px 0px;
-  border-top: 1px dashed #fff;
-  cursor: pointer;
-  /*order: 0;*/
+.cl {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-label::after {
-  content: '\f10c'; /* circle outline */
-  display: block;
-  position: absolute;
-  top: 11px;
-  right: 10px;
-  font: 1.5em 'FontAwesome';
-  animation: 1s;
+.sub_button {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-label:hover, input:focus + label {
-  background-color: rgba(255, 255, 255, .2);
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-input:checked + label {
-  /*order: 2;*/
-  animation: selected .5s;
-}
 
-input:checked + label::after {
-  content: '\f058'; /* circle checkmark */
+@font-face {
+  font-family: '1';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/1.ttf);
 }
-
-@keyframes selected {
-  0%{
-    opacity: 0;
-    background-color: rgba(255, 255, 255, .4);
-    transform: translateY(-10px);
-    transform: translateY(10px);
-  }
-  50% {
-    opacity: 1;
-    background-color: rgba(255, 255, 255, .4);
-  }
+@font-face {
+  font-family: '2';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/2.ttf);
+}
+@font-face {
+  font-family: '3';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/3.ttf);
+}
+@font-face {
+  font-family: '4';
+  font-style: normal;
+  font-weight: 500;
+  src: url(fonts/font_php/4.ttf);
+}
+@font-face {
+  font-family: '5';
+  font-style: normal;
+  font-weight: 500;
+  src: url(fonts/font_php/5.ttf);
 }
