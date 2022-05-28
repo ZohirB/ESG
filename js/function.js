@@ -57,7 +57,8 @@ function toggle(source,start) {
   }
 }  
 count = 0;
-document.getElementById('crazyoutput').textContent = "عدد المواد المحددة (" + count + ")";
+//document.getElementById('Count_Uni').textContent = "عدد المواد المحددة (" + count + ") "+ emoji(count) +" ";
+document.getElementById('Count_Uni').textContent = "عدد المواد المحددة (" + count + ") ";
 function checkboxes_inc(){
   count = 0;
   var inputElems = document.getElementsByTagName("input");
@@ -65,8 +66,38 @@ function checkboxes_inc(){
     if (inputElems[i].checked == true && inputElems[i].id < 75)
       count++;
   }
-  document.getElementById('crazyoutput').textContent = "عدد المواد المحددة (" + count + ")";
+  document.getElementById('Count_Uni').textContent = "عدد المواد المحددة (" + count + ") "+ emoji(count) +" ";
 }
+
+
+function emoji(count){
+  var emo = ['🙄','😅','😎','😬','😧','😨','😱','🤯'];
+  if (count == 0){
+    return emo[0];
+  }
+  else if (count > 0 && count < 7){
+    return emo[1];
+  }
+  else if (count == 7){
+    return emo[2];
+  }
+  else if (count > 7 && count <= 9){
+    return emo[3];
+  }
+  else if (count >= 10 && count <= 11){
+    return emo[4];
+  }
+  else if (count >= 12 && count <= 14){
+    return emo[5];
+  }
+  else if (count >= 15 && count <= 18){
+    return emo[6];
+  }
+  else {
+    return emo[7];
+  }
+}
+
 
 /*
 function DropDown(ty,info){

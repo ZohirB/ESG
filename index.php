@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/stylemain.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/style_qm.css">
+  <link rel="stylesheet" href="css/Slideshow.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script class="u-script" type="text/javascript" src="js/function.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="js/main.js" defer=""></script>
@@ -24,16 +24,43 @@
         echo "<form method='post'>";
         echo"<div class='container'>";
         echo"<h1>مولد برنامج الفحص الخاص بكلية الهندسة المعلوماتية بجامعة حلب</h1>";
-/*
-        echo"<div class='subjects'>";
-        echo"<div id='arrow-left' class='arrow'></div>";
-        echo"<div class='slide slide1'></div>";
-        echo"<div class='slide slide2'></div>";
-        echo"<div class='slide slide3'></div>";
-        echo"<div id='arrow-right' class='arrow'></div>";
         echo"</div>";
+
+        echo"<div class='container'>";
+        echo "
+            <!-- Slideshow container -->
+            <div class='slideshow-container'>
+
+            <div class='mySlides fade'>
+                <div class='numbertext'>4 / 1</div>
+                <img src='css/examples/ex1.jpg' style='width:100%'>
+                <div class='text'>اللون البنفسجي + الخط رقم 1 (Regular)</div>
+            </div>
+
+            <div class='mySlides fade'>
+                <div class='numbertext'>4 / 2</div>
+                <img src='css/examples/ex1.jpg' style='width:100%'>
+                <div class='text'>اللون التركوازي + الخط رقم 2 (Light)</div>
+            </div>
+
+            <div class='mySlides fade'>
+                <div class='numbertext'>4 / 3</div>
+                <img src='css/examples/ex3.jpg' style='width:100%'>
+                <div class='text'>اللون الأزرق (جديد) + الخط رقم 2 (Bold)</div>
+            </div>
+
+            <div class='mySlides fade'>
+                <div class='numbertext'>4 / 4</div>
+                <img src='css/examples/ex1.jpg' style='width:100%'>
+                <div class='text'>اللون الفستقي + الخط رقم 3 (Light)</div>
+            </div>
+
+            <a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
+            <a class='next' onclick='plusSlides(1)'>&#10095;</a>
+            
+            </div> ";
         echo"</div>";
-*/        
+
         echo"<div class='container'>";
         echo"<div class='subjects'>";
         echo"<h2 class='h2-1' aria-hidden='true' type='button'>اختر المواد</h2>";
@@ -62,7 +89,7 @@
         echo"<div id='FifthYear'>";
         print_labels(5,9,208,64);
         echo"</div>";
-        echo"<h2 class='Select_Count h2-1' aria-hidden='true' id='crazyoutput'>عدد المواد المحددة</h2>";
+        echo"<h2 class='Select_Count h2-1' aria-hidden='true' id='Count_Uni'>عدد المواد المحددة</h2>";
 
         echo"</div>";
         echo"</div>";
@@ -108,15 +135,15 @@
         echo"</div>";
         echo"</form>";
 
-/*      
-        echo"<div class='container-1'>";
-        echo"<div class='footer'>";
-        echo "<footer>";
-        echo "<p>Idea and Build Up By: Hasan</p>";
-        echo "<p>Developed By: Zohir</p>";
-        echo "</footer>";
-        echo"</div>";
-        echo"</div>";
+/*      echo"
+            <div class='container-1'>
+            <div class='footer'>
+            <footer>
+            <p>Idea and Build Up By: Hasan</p>
+            <p>Developed By: Zohir</p>
+            </footer>
+            </div>
+            </div>";
 */
         } else {
             $ty = 2;
