@@ -191,8 +191,6 @@
                 }
             }
 
-            //mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "')");
-
             mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "','" . $motn . "')");
             //echo mysqli_error($res);
             header('location: structure/create.php?code=' . $cd);
