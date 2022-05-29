@@ -35,6 +35,10 @@
   display: none;
 }
 
+#tb{
+  display: none;
+}
+
 
 /* items */
 .subjects {
@@ -79,7 +83,13 @@
   padding: 20px;
 }
 
-.cl {
+.table_state {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.motivational{
   display: flex;
   flex-direction: column;
   padding: 20px;

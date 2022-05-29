@@ -43,6 +43,7 @@ $design =$r['design'] ;
 $ty=$r['format'];
 $font=$r['font'];
 $na=$r['na'];
+$motn=$r['motn'];
 
 if($design == 1){
     $options['backgroundcolor']=array(0xa9,0xc2,0xeF);
@@ -52,6 +53,7 @@ if($design == 1){
     $options['cellcolor']=    array(0xef,0xef,0xef);
     $options['headercolor']=array(0x32,0x5D,0xeF);
     $options['titlecolor']=array(0x00,0x49,0x98);
+    $options['endtitlecolor']=array(0x32,0x5D,0xeF);
 } else if($design == 2){
     $options['backgroundcolor']=array(0x18,0x18,0x18);
     $options['linecolor']=array(0x35,0x35,0x35);
@@ -60,6 +62,7 @@ if($design == 1){
     $options['cellcolor']=   array(0x70,0x70,0x70);
     $options['headercolor']=array(0x35,0x35,0x35);
     $options['titlecolor']=array(0xcc,0xcc,0xff);
+    $options['endtitlecolor']=array(0x35,0x35,0x35);
 } else if ($design == 3){
     /*
     $options['backgroundcolor']=array(0xFF,0xB2,0xC8);
@@ -77,6 +80,7 @@ if($design == 1){
     $options['cellcolor']=   array(0xff,0xf0,0xf0);
     $options['headercolor']=array(0x66,0x33,0x99);
     $options['titlecolor']=array(0x44,0x33,0x77); //array(0xcc,0x00,0x90);
+    $options['endtitlecolor']=array(0x66,0x33,0x99);
 } else if($design == 4){
     /*
     $options['backgroundcolor']=array(0xa5,0xdF,0x9B);
@@ -91,10 +95,10 @@ if($design == 1){
     $options['linecolor']=array(0x00,0x6B,0x02);
     $options['textcolor']=array(0x00,0x3B,0x02);
     $options['headertextcolor']=array(0xfc,0xfc,0xff);
-    $options['cellcolor']=   array(0xf0,0xFF,0xf0);
+    $options['cellcolor']= array(0xf0,0xFF,0xf0);
     $options['headercolor']=array(0x00,0x6B,0x02);
     $options['titlecolor']=array(0x00,0x4B,0x02);
-
+    $options['endtitlecolor']=array(0x00,0x6B,0x02);
 } else if ($design == 5){
     $options['backgroundcolor']=array(0xA4,0xA4,0xBF); //array(0x16,0x23,0x5A)
     $options['cellcolor']=array(0xF2,0xEA,0xED); //array(0xA4,0xA4,0xBF)
@@ -103,6 +107,7 @@ if($design == 1){
     $options['titlecolor']=array(0xFF,0xFF,0xFF);//array(0x88,0xC4,0x64)
     $options['headertextcolor']=array(0xFF,0xFF,0xFF);
     $options['textcolor']=array(0x16,0x23,0x5A); //array(0xF2,0xEA,0xED)
+    $options['endtitlecolor']=array(0x2A,0x34,0x57);
 } else if ($design == 6){  //005555,069A8E
     $options['backgroundcolor']=array(0x06,0x9a,0x8e); //5c868d
     $options['cellcolor']=array(0xff,0xff,0xff); 
@@ -111,6 +116,7 @@ if($design == 1){
     $options['titlecolor']=array(0xff,0xff,0xff); 
     $options['headertextcolor']=array(0xFF,0xFF,0xFF); 
     $options['textcolor']=array(0x03,0x35,0x3e); 
+    $options['endtitlecolor']=array(0xff,0xff,0xff); 
 } else if ($design == 7){  //3F72AF,112D4E,DBE2EF
     $options['backgroundcolor']=array(0x3f,0x72,0xaf); //EAEA7F
     $options['cellcolor']=array(0xF2,0xEA,0xED); 
@@ -119,6 +125,7 @@ if($design == 1){
     $options['titlecolor']=array(0xff,0xff,0xff); 
     $options['headertextcolor']=array(0xFF,0xFF,0xFF); //c1403d
     $options['textcolor']=array(0x11,0x2d,0x4e); //04060f//a79c93
+    $options['endtitlecolor']=array(0xff,0xff,0xff);
 } else if ($design == 8){  //62D2A2,1FAB89,65C18C
     $options['backgroundcolor']=array(0x62,0xd2,0xa2); 
     $options['cellcolor']=array(0xF2,0xEA,0xED); 
@@ -127,6 +134,7 @@ if($design == 1){
     $options['titlecolor']=array(0xff,0xff,0xff); 
     $options['headertextcolor']=array(0xFF,0xFF,0xFF);
     $options['textcolor']=array(0x0d,0x73,0x77); 
+    $options['endtitlecolor']=array(0xff,0xff,0xff);
 }
 
 /*
@@ -150,36 +158,42 @@ if ($font == 1){
     $options['textsize']=20;
     $options['headertextsize']=33;
     $options['titlesize']=40;  
+    $options['endtitlesize']=30;
 } else if ($font == 2){
     $font  = $path.'/../css/fonts/font_php/2.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
     $options['titlesize']=45;  
+    $options['endtitlesize']=35;
 } else if ($font == 3){
     $font  = $path.'/../css/fonts/font_php/3.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
-    $options['titlesize']=45;  
+    $options['titlesize']=45; 
+    $options['endtitlesize']=35; 
 } else if ($font == 4){
     $font  = $path.'/../css/fonts/font_php/4.ttf';
     $options['widthmargin']=350;
     $options['textsize']=30;
     $options['headertextsize']=40;
     $options['titlesize']=55;  
+    $options['endtitlesize']=40;
 } else if ($font == 5){
     $font  = $path.'/../css/fonts/font_php/5.ttf';
     $options['widthmargin']=400;
     $options['textsize']=28;
     $options['headertextsize']=38;
     $options['titlesize']=49;  
+    $options['endtitlesize']=40;
 } else if ($font == 6){
     $font  = $path.'/../css/fonts/font_php/6.ttf';
     $options['widthmargin']=400;
     $options['textsize']=25;
     $options['headertextsize']=37;
-    $options['titlesize']=45;  
+    $options['titlesize']=45;
+    $options['endtitlesize']=35;  
 }
 
 if ($na == 1){
@@ -252,15 +266,16 @@ if($ty == 1){
     }
     $titlewidth = gettextwidth($font,$title,$options['titlesize']);
     $titleheight = gettextheight($font,$title,$options['titlesize']);
+
+    $endtitlewidth = gettextwidth($font,$motn,$options['endtitlesize']); 
+    $endtitleheight = gettextheight($font,$motn,$options['endtitlesize']); 
+
     $totalwidth=0;
     $totalheight=0;
 
     $totalwidth += 3*$options['linethickness'];
     $totalwidth += 4*$options['cellwidthmargin'];
     $totalwidth += $col[0] + $col[1];
-
-
-
     $totalwidth += 2*$options['widthmargin'];
 
     $totalheight += 2*$options['heightmargin'];
@@ -271,8 +286,9 @@ if($ty == 1){
         $totalheight += $row[$i];
     }
 
+    $options['endheightmargin']= $totalheight - ($endtitleheight/2);
 
-    $image = imagecreate($totalwidth,$totalheight);
+    $image = imagecreate($totalwidth,$totalheight + $endtitleheight); 
     $options['backgroundcolor']=imagecolorallocate($image,$options['backgroundcolor'][0],$options['backgroundcolor'][1],$options['backgroundcolor'][2]);
     $options['linecolor']=imagecolorallocate($image,$options['linecolor'][0],$options['linecolor'][1],$options['linecolor'][2]);
     $options['cellcolor']=imagecolorallocate($image,$options['cellcolor'][0],$options['cellcolor'][1],$options['cellcolor'][2]);
@@ -280,8 +296,11 @@ if($ty == 1){
     $options['headercolor']=imagecolorallocate($image,$options['headercolor'][0],$options['headercolor'][1],$options['headercolor'][2]);
     $options['headertextcolor']=imagecolorallocate($image,$options['headertextcolor'][0],$options['headertextcolor'][1],$options['headertextcolor'][2]);
     $options['titlecolor']=imagecolorallocate($image,$options['titlecolor'][0],$options['titlecolor'][1],$options['titlecolor'][2]);
+    $options['endtitlecolor']=imagecolorallocate($image,$options['endtitlecolor'][0],$options['endtitlecolor'][1],$options['endtitlecolor'][2]);
     imagefill($image,0,0,$options['backgroundcolor']);
     writetext($font,$image,($totalwidth - $titlewidth)/2,$options['heightmargin'],$title,$options['titlesize'],$options['titlecolor']);
+
+    writetext($font,$image,($totalwidth - $endtitlewidth)/2,$options['endheightmargin'],$motn,$options['endtitlesize'],$options['endtitlecolor']); 
     $curx=0;
     $cury=0;
     $curx += $options['widthmargin'];
@@ -443,6 +462,10 @@ if($ty == 1){
     }
     $titlewidth = gettextwidth($font,$title,$options['titlesize']);
     $titleheight = gettextheight($font,$title,$options['titlesize']);
+
+    $endtitlewidth = gettextwidth($font,$motn,$options['endtitlesize']);
+    $endtitleheight = gettextheight($font,$motn,$options['endtitlesize']);
+
     $totalwidth=0;
     $totalheight=0;
 
@@ -461,8 +484,9 @@ if($ty == 1){
         $totalheight += $row[$i];
     }
 
+    $options['endheightmargin']= $totalheight - ($endtitleheight/2);
 
-    $image = imagecreate($totalwidth,$totalheight);
+    $image = imagecreate($totalwidth,$totalheight + $endtitleheight);
     $options['backgroundcolor']=imagecolorallocate($image,$options['backgroundcolor'][0],$options['backgroundcolor'][1],$options['backgroundcolor'][2]);
     $options['linecolor']=imagecolorallocate($image,$options['linecolor'][0],$options['linecolor'][1],$options['linecolor'][2]);
     $options['cellcolor']=imagecolorallocate($image,$options['cellcolor'][0],$options['cellcolor'][1],$options['cellcolor'][2]);
@@ -470,9 +494,11 @@ if($ty == 1){
     $options['headercolor']=imagecolorallocate($image,$options['headercolor'][0],$options['headercolor'][1],$options['headercolor'][2]);
     $options['headertextcolor']=imagecolorallocate($image,$options['headertextcolor'][0],$options['headertextcolor'][1],$options['headertextcolor'][2]);
     $options['titlecolor']=imagecolorallocate($image,$options['titlecolor'][0],$options['titlecolor'][1],$options['titlecolor'][2]);
+    $options['endtitlecolor']=imagecolorallocate($image,$options['endtitlecolor'][0],$options['endtitlecolor'][1],$options['endtitlecolor'][2]);
     $black=imagecolorallocate($image,0,0,0);
     imagefill($image,0,0,$options['backgroundcolor']);
     writetext($font,$image,($totalwidth - $titlewidth)/2,$options['heightmargin'],$title,$options['titlesize'],$options['titlecolor']);
+    writetext($font,$image,($totalwidth - $endtitlewidth)/2,$options['endheightmargin'],$motn,$options['endtitlesize'],$options['endtitlecolor']); 
     $curx=0;
     $cury=0;
     $curx += $options['widthmargin'];

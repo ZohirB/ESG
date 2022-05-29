@@ -146,7 +146,7 @@ input:checked + label::after {
   align-items: center;
   background-color: #435757;
   border: 0;
-  border-radius: 100px;
+  border-radius: 1em;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
@@ -188,6 +188,10 @@ input:checked + label::after {
   color: rgba(0, 0, 0, .3);
 }
 
+
+.button-19{
+  border-radius: 1em;
+}
 
 
 @keyframes selected {

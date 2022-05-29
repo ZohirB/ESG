@@ -13,7 +13,7 @@ function DropDown(info){
       }
     }
 }
-
+//,Font_4
 function DropDown_Font(info){
   var fonts = [Font_1,Font_2,Font_3];
   for (var i=0 ; i < fonts.length ; i++){
@@ -96,6 +96,39 @@ function emoji(count){
   else {
     return emo[7];
   }
+}
+
+function mot_text(radio_val){
+  if (radio_val == 1){
+    tb.style.display = "none";
+  }
+  else if (radio_val == 2){
+    tb.style.display = "inline";
+  }
+}
+
+function generateRandomNumber(maxLimit){
+  let rand = Math.random() * maxLimit;
+  rand = Math.floor(rand);
+  return rand;
+}
+
+var str = [];
+str[0]="إذا أردت أن تتغلب على الهزيمة فعليك بالانتصار";
+str[1]="أنار الله درب كل مجتهد، وفقكم لكل ما فيه الخير لكم، ولكل شيء تحبونه";
+str[2]="إن التركيز هو الأساس لكي تنجح في أي شيء في حياتك";
+str[3]="عندما لا تجد الطريق المؤدي إلى النجاح سيكون عليك أن تبتكره";
+str[4]="ادرس الآن لكي لا تندم في المستقبل";
+str[5]="اضغط على نفسك، واعمل بجد، لأنه لا يوجد شخص آخر سيفعل ذلك من أجلك";
+str[6]="لا تنتظر الفرصة للدراسة، بل اخلقها لنفسك";
+str[7]="لا تتوقف عندما تتعب، توقف فقط عندما تنتهي";
+str[8]="سيكون الأمر صعباً، لكن الصعب لا يعني مستحيلًا";
+str[9]="أن تحاول أي محاولة جديدة وتتعثر لتتعلم، أفضل من عدم المحاولة نهائياً";
+str[10]="تذكر دوماً ما أنت بارع فيه وتمسك به";
+
+function gen_random(){
+  var num = generateRandomNumber(10);
+  document.getElementById("mot").value = str[num];
 }
 
 

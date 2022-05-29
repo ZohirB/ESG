@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/stylemain.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/Slideshow.css">
+  <link rel="stylesheet" href="css/textbox.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script class="u-script" type="text/javascript" src="js/function.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="js/main.js" defer=""></script>
@@ -104,9 +105,29 @@
         echo"</div>";
 
         echo"<div class='container'>";
-        echo"<div class='cl'>";
+        echo"<div class='table_state'>";
         echo"<h2 class='h2-1'>اختر طبيعة الجدول</h2>";
         print_na_label();
+        echo"</div>";
+        echo"</div>";
+
+        echo"<div class='container'>";
+        echo"<div class='motivational'>";
+        echo"<h2 class='h2-1'>اختر حالة العبارة التحفيزية</h2>";
+        
+        echo"<input type='radio' input id='700' name='motivational' value='1' checked='checked' onclick='mot_text(1)'>";
+        echo"<label for='700'>بدون عبارة تحفيزية</label>";
+
+        echo"<input type='radio' id='701' name='motivational' value='2' onclick='mot_text(2)'>";
+        echo"<label for='701'>إضافة عبارة تحفيزية</label>";
+
+        echo"<div id='tb'>";
+        echo"<input type='text' id='mot' name='motn' value='' placeholder='اكتب العبارة...' >";
+        echo"<div class='sub_button'>";
+        echo"<button type='button' class='button-18 button-19' onclick='gen_random()'>اختر عبارة بشكل عشوائي</button>";
+        echo"</div>";
+        echo"</div>";
+
         echo"</div>";
         echo"</div>";
 
@@ -147,6 +168,18 @@
             if (array_key_exists('na', $_POST)) {
                 $na = intval($_POST['na']);
             }
+
+            if (array_key_exists('motivational', $_POST)) {
+                $motivational = intval($_POST['motivational']);
+
+                if ($motivational == 2){
+                    $motn = $_POST['motn'];
+                }
+                else {
+                    $motn = null;
+                }
+            }
+
             $res = mysqli_connect($db_host, $db_user, $db_pass);
             mysqli_select_db($res, $db_name);
             //$res = mysqli_connect('localhost','root','');  
@@ -158,7 +191,10 @@
                     $selected[] = intval($val);
                 }
             }
-            mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "')");
+
+            //mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "')");
+
+            mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "','" . $motn . "')");
             //echo mysqli_error($res);
             header('location: php_Pages/create.php?code=' . $cd);
         }
