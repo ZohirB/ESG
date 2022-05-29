@@ -1,6 +1,15 @@
 <?php
     include("schedule.php");
 
+    function slideshow_con($nt,$fn,$t){
+        echo "
+            <div class='mySlides fade'>
+                <div class='numbertext'>".$nt."</div>
+                <img src='css/examples/".$fn.".jpg' style='width:100%'>
+                <div class='text'>".$t."</div>
+            </div>";
+    }
+
     function check_mul_label($in_id,$to){
         if ($to%2 != 0){
             echo "<input id='".$in_id."' type='checkbox' onclick='toggle(this,".$to.");checkboxes_inc();'>";

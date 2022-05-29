@@ -29,32 +29,15 @@
         echo"<div class='container'>";
         echo "
             <!-- Slideshow container -->
-            <div class='slideshow-container'>
+            <div class='slideshow-container'>";
 
-            <div class='mySlides fade'>
-                <div class='numbertext'>4 / 1</div>
-                <img src='css/examples/ex1.jpg' style='width:100%'>
-                <div class='text'>اللون البنفسجي + الخط رقم 1 (Regular)</div>
-            </div>
+        slideshow_con("5 / 1","ex1","اللون الأزرق (الجديد) + الخط رقم 2 (Bold)");
+        slideshow_con("5 / 2","ex2","اللون التركوازي + الخط رقم 2 (Light)");
+        slideshow_con("5 / 3","ex3","اللون الأزرق (قديم) + الخط رقم 1 (Regular)");
+        slideshow_con("5 / 4","ex4","اللون البنفسجي + الخط رقم 3 (Light)");
+        slideshow_con("5 / 5","ex5","اللون الفستقي + الخط رقم 3 (Bold)");
 
-            <div class='mySlides fade'>
-                <div class='numbertext'>4 / 2</div>
-                <img src='css/examples/ex1.jpg' style='width:100%'>
-                <div class='text'>اللون التركوازي + الخط رقم 2 (Light)</div>
-            </div>
-
-            <div class='mySlides fade'>
-                <div class='numbertext'>4 / 3</div>
-                <img src='css/examples/ex3.jpg' style='width:100%'>
-                <div class='text'>اللون الأزرق (جديد) + الخط رقم 2 (Bold)</div>
-            </div>
-
-            <div class='mySlides fade'>
-                <div class='numbertext'>4 / 4</div>
-                <img src='css/examples/ex1.jpg' style='width:100%'>
-                <div class='text'>اللون الفستقي + الخط رقم 3 (Light)</div>
-            </div>
-
+        echo "
             <a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
             <a class='next' onclick='plusSlides(1)'>&#10095;</a>
             
@@ -134,16 +117,18 @@
         echo"</div>";
         echo"</div>";
         echo"</form>";
-
-/*      echo"
-            <div class='container-1'>
-            <div class='footer'>
-            <footer>
-            <p>Idea and Build Up By: Hasan</p>
-            <p>Developed By: Zohir</p>
-            </footer>
-            </div>
-            </div>";
+/*
+        echo"<div class='container'>";
+        echo"
+                <div class='container-1'>
+                <div class='footer'>
+                <footer>
+                <p>Idea and Build Up By: Hasan</p>
+                <p>Developed By: Zohir</p>
+                </footer>
+                </div>
+                </div>";
+        echo"</div>";
 */
         } else {
             $ty = 2;
@@ -173,7 +158,7 @@
                     $selected[] = intval($val);
                 }
             }
-            mysqli_query($res, "INSERT INTO `schedule` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "')");
+            mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "')");
             //echo mysqli_error($res);
             header('location: php_Pages/create.php?code=' . $cd);
         }

@@ -27,7 +27,7 @@ mysqli_select_db($res,$db_name);
 
 //$res = mysqli_connect('localhost','root','');
 //mysqli_select_db($res,"neatschedule");
-$r = mysqli_query($res,"SELECT * FROM `schedule` WHERE `code`='".$_GET['code']."'");
+$r = mysqli_query($res,"SELECT * FROM `schedule_2_2022` WHERE `code`='".$_GET['code']."'");
 
 $r = mysqli_fetch_assoc($r);
 $selected=explode(',',$r['selected']);
