@@ -4,10 +4,23 @@ input[type=text], select {
   width: 100%;
   font: 300 0.8em/0.8 'Roboto', sans-serif;
   padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin: 0px 0px;
+  display: flex;
+  border: 2px solid rgb(67, 87, 87);
+  border-radius: 0.5em;
   box-sizing: border-box;
 }
 
+
+.input-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 0.5em;
+}
+.input-container input:focus, .input-container input:active {
+  outline: none;
+}
+.input-container input {
+  border: none;
+}

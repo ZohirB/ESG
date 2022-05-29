@@ -1,7 +1,7 @@
 <?php
-    include("php_Pages/core.php");
-    include("php_Pages/schedule.php");
-    include("php_Pages/function.php");
+    include("structure/core.php");
+    include("structure/schedule.php");
+    include("structure/function.php");
 ?>
 
 <!DOCTYPE html>
@@ -111,8 +111,7 @@
         echo"</div>";
         echo"</div>";
 
-        echo"<div class='container'>";
-        echo"<div class='motivational'>";
+        echo"<div class='container motivational'>";
         echo"<h2 class='h2-1'>اختر حالة العبارة التحفيزية</h2>";
         
         echo"<input type='radio' input id='700' name='motivational' value='1' checked='checked' onclick='mot_text(1)'>";
@@ -121,14 +120,14 @@
         echo"<input type='radio' id='701' name='motivational' value='2' onclick='mot_text(2)'>";
         echo"<label for='701'>إضافة عبارة تحفيزية</label>";
 
-        echo"<div id='tb'>";
-        echo"<input type='text' id='mot' name='motn' value='' placeholder='اكتب العبارة...' >";
-        echo"<div class='sub_button'>";
-        echo"<button type='button' class='button-18 button-19' onclick='gen_random()'>اختر عبارة بشكل عشوائي</button>";
-        echo"</div>";
-        echo"</div>";
-
-        echo"</div>";
+        echo "
+        <div id='tb'>
+            <div class='input-container'>
+                <input type='text' id='mot' name='motn' value='' class='input-field placeholder='اكتب العبارة...' >
+                <button type='button' class='button-18 button-19 input-button' onclick='gen_random()'><i style='font-size:20px' class='fa'>&#xf021;</i></button>
+            </div>
+        </div>";
+        
         echo"</div>";
 
         echo"<div class='container'>";
@@ -196,7 +195,7 @@
 
             mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "','" . $motn . "')");
             //echo mysqli_error($res);
-            header('location: php_Pages/create.php?code=' . $cd);
+            header('location: structure/create.php?code=' . $cd);
         }
         ?>
     </body>

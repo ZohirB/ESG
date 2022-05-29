@@ -190,7 +190,11 @@ input:checked + label::after {
 
 
 .button-19{
-  border-radius: 1em;
+  border-radius: 0.5em;
+}
+.button-19:active {
+  background: rgb(67, 87, 87);
+  color: rgb(67, 87, 87);
 }
 
 
