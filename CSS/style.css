@@ -13,7 +13,7 @@ body {
   margin: 20px;
   color: #435757;
   background: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%);
-  font: 500 1.2em/1.2 'Roboto', sans-serif;
+  font: 400 1.2em/1.2 'Roboto', sans-serif;
 }
 
 .container {
@@ -146,7 +146,6 @@ input:checked + label::after {
   align-items: center;
   background-color: #435757;
   border: 0;
-  border-radius: 1em;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
@@ -169,6 +168,7 @@ input:checked + label::after {
   user-select: none;
   -webkit-user-select: none;
   vertical-align: middle;
+  border-radius: 0.5em;
 }
 
 .button-18:hover,
@@ -189,8 +189,12 @@ input:checked + label::after {
 }
 
 
+
 .button-19{
-  border-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-top-right-radius: 0em;
+  border-bottom-right-radius: 0em;
 }
 .button-19:active {
   background: rgb(67, 87, 87);
@@ -211,6 +215,10 @@ input:checked + label::after {
   }
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
 
 @font-face {
   font-family: 'Arvo-Regular';

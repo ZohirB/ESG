@@ -49,27 +49,27 @@
         echo"<div class='subjects'>";
         echo"<h2 class='h2-1' aria-hidden='true' type='button'>اختر المواد</h2>";
 
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FirstYear)'>السنة الأولى</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FirstYear,1)'>السنة الأولى</h2>";
         echo"<div id='FirstYear'>";
         print_labels(1,1,200,7);
         echo"</div>";
         
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(SecondYear)'>السنة الثانية</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(SecondYear,1)'>السنة الثانية</h2>";
         echo"<div id='SecondYear'>";
         print_labels(2,3,202,21);
         echo"</div>";
 
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(ThirdYear)'>السنة الثالثة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(ThirdYear,1)'>السنة الثالثة</h2>";
         echo"<div id='ThirdYear'>";
             print_labels(3,5,204,35);
         echo"</div>";
 
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FourthYear)'>السنة الرابعة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FourthYear,1)'>السنة الرابعة</h2>";
         echo"<div id='FourthYear'>";
         print_labels(4,7,206,50);
         echo"</div>";
 
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FifthYear)'>السنة الخامسة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(FifthYear,1)'>السنة الخامسة</h2>";
         echo"<div id='FifthYear'>";
         print_labels(5,9,208,64);
         echo"</div>";

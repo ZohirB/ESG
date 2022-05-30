@@ -19,7 +19,6 @@
             echo "<input id='".$in_id."' type='checkbox' onclick='toggle(this,".$to.");checkboxes_inc();'>";
             echo "<label for='".$in_id."'>تحديد مواد الفصل الثاني </label>";
         }
-
     }
     
     function checkbox_subject_label($key,$val){
@@ -51,16 +50,23 @@
         echo"<label for='".$id."'>".$name."</label>";
     }
     function print_design_label(){
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_design(New_design)'>الألوان الجديدة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(New_design,3)'>الألوان الجديدة</h2>";
         echo"<div id='New_design'>";
         echo"<input type='radio' id='505' name='design' value='5' checked='checked'>";
         echo"<label for='505'>اللون البنفسجي</label>";
         checkbox_design_label(506,6,"اللون التركوازي");
         checkbox_design_label(507,7,"اللون الأزرق");
         checkbox_design_label(508,8,"اللون الفستقي");
+        /*
+        echo"   <div class='sub_button'>
+                <a href='structure/colorReq.php'>
+                <button type='button' class='button-18'>تقديم طلب إضافة لون جديد</button>
+                </a> 
+                </div>";
+        */
         echo"</div>";
 
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_design(Old_design)'>الألوان القديمة</h2>";
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(Old_design,3)'>الألوان القديمة</h2>";
         echo"<div id='Old_design'>";
         checkbox_design_label(501,1,"اللون الأزرق");
         checkbox_design_label(502,2,"اللون الأسود");
@@ -69,37 +75,44 @@
         echo"</div>";
     }
 
+    // font section
+    function createNewFontH2($fontNum,$fontName){
+        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(".$fontNum.",2)'>".$fontName."</h2>";
+    }
+
+    function createNewFontLabel($labelId,$val,$fontName,$labelClass){
+        echo"<input type='radio' input id='".$labelId."' name='font' value='".$val."'>";
+        echo"<label for='".$labelId."' class='".$labelClass."'>".$fontName."</label>";
+    }
+
     function print_font_label(){
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_1)'>الخط رقم 1</h2>";
+        createNewFontH2("Font_1","الخط رقم 1");
         echo"<div id='Font_1'>";
         echo"<input type='radio' input id='401' name='font' value='1' checked='checked'>";
         echo"<label for='401' class='font1'>الخط رقم 1 (Regular)</label>";
         echo"</div>";
 
-
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_2)'>الخط رقم 2</h2>";
+        createNewFontH2("Font_2","الخط رقم 2");
         echo"<div id='Font_2'>";
-        echo"<input type='radio' id='402' name='font' value='2' >";
-        echo"<label for='402' class='font2'>الخط رقم 2 (Light)</label>";
-        echo"<input type='radio' id='403' name='font' value='3'>";
-        echo"<label for='403' class='font3'>الخط رقم 2 (Bold)</label>";
+        createNewFontLabel(402,2,"الخط رقم 2 (Light)","font2");
+        createNewFontLabel(403,3,"الخط رقم 2 (Bold)","font3");
         echo"</div>";
 
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_3)'>الخط رقم 3</h2>";
+        createNewFontH2("Font_3","الخط رقم 3");
         echo"<div id='Font_3'>";
-        echo"<input type='radio' id='404' name='font' value='4'>";
-        echo"<label for='404' class='font4'>الخط رقم 3 (Light)</label>";
-        echo"<input type='radio' id='405' name='font' value='5'>";
-        echo"<label for='405' class='font5'>الخط رقم 3 (Bold)</label>";
+        createNewFontLabel(404,4,"الخط رقم 3 (Light)","font4");
+        createNewFontLabel(405,5,"الخط رقم 3 (Bold)","font5");
         echo"</div>";
+
         /*
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown_Font(Font_4)'>الخط رقم 4</h2>";
+        createNewFontH2("Font_4","الخط رقم 4");
         echo"<div id='Font_4'>";
-        echo"<input type='radio' id='406' name='font' value='6'>";
-        echo"<label for='406'>الخط رقم 4 (Bold)</label>";
+        createNewFontLabel(406,6,"الخط رقم 4 (Light)","font6");
+        createNewFontLabel(407,7,"الخط رقم 4 (Bold)","font7");
         echo"</div>";
         */
     }
+
     function print_na_label(){
         echo"<input type='radio' input id='601' name='na' value='1' checked='checked'>";
         echo"<label for='601'>جدول مختصر</label>";

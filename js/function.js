@@ -1,48 +1,30 @@
 
-function DropDown(info){
-    var years = [FirstYear,SecondYear,ThirdYear,FourthYear,FifthYear];
-    for (var i=0 ; i < years.length ; i++){
-      if (info == years[i]){
-        if (years[i].style.display == "inline") 
-          years[i].style.display = "none";
-        else 
-          years[i].style.display = "inline";
-      }
-      else {
-        years[i].style.display = "none";
-      }
-    }
-}
-//,Font_4
-function DropDown_Font(info){
-  var fonts = [Font_1,Font_2,Font_3];
-  for (var i=0 ; i < fonts.length ; i++){
-    if (info === fonts[i]){
-      if (fonts[i].style.display === "inline") 
-        fonts[i].style.display = "none";
+const years = [FirstYear,SecondYear,ThirdYear,FourthYear,FifthYear];
+const fonts = [Font_1,Font_2,Font_3];
+const designs = [New_design,Old_design];
+
+function DropDown(info,type){
+  var data = [];
+  if (type == 1) // Years type
+    data = years;
+  else if (type == 2) // fonts type
+    data = fonts;
+  else if (type == 3) // designs type
+    data = designs;
+
+  for (var i=0 ; i < data.length ; i++){
+    if (info == data[i]){
+      if (data[i].style.display == "inline") 
+        data[i].style.display = "none";
       else 
-        fonts[i].style.display = "inline";
+        data[i].style.display = "inline";
     }
     else {
-      fonts[i].style.display = "none";
+      data[i].style.display = "none";
     }
   }
 }
 
-function DropDown_design(info){
-  var designs = [New_design,Old_design];
-  for (var i=0 ; i < designs.length ; i++){
-    if (info === designs[i]){
-      if (designs[i].style.display === "inline") 
-        designs[i].style.display = "none";
-      else 
-        designs[i].style.display = "inline";
-    }
-    else {
-      designs[i].style.display = "none";
-    }
-  }
-}
 
 function toggle(source,start) {
   var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -72,30 +54,22 @@ function checkboxes_inc(){
 
 function emoji(count){
   var emo = ['🙄','😅','😎','😬','😧','😨','😱','🤯'];
-  if (count == 0){
+  if (count == 0)
     return emo[0];
-  }
-  else if (count > 0 && count < 7){
+  else if (count > 0 && count < 7)
     return emo[1];
-  }
-  else if (count == 7){
+  else if (count == 7)
     return emo[2];
-  }
-  else if (count > 7 && count <= 9){
+  else if (count > 7 && count <= 9)
     return emo[3];
-  }
-  else if (count >= 10 && count <= 11){
+  else if (count >= 10 && count <= 11)
     return emo[4];
-  }
-  else if (count >= 12 && count <= 14){
+  else if (count >= 12 && count <= 14)
     return emo[5];
-  }
-  else if (count >= 15 && count <= 18){
+  else if (count >= 15 && count <= 18)
     return emo[6];
-  }
-  else {
+  else 
     return emo[7];
-  }
 }
 
 function mot_text(radio_val){
@@ -130,34 +104,3 @@ function gen_random(){
   var num = generateRandomNumber(10);
   document.getElementById("mot").value = str[num];
 }
-
-
-/*
-function DropDown(ty,info){
-  const years = [FirstYear,SecondYear,ThirdYear,FourthYear,FifthYear];
-  const fonts = [Font_1,Font_2,Font_3,Font_4];
-  const designs = [New_design,Old_design];
-  var moreText;
-  if (ty == "year"){
-    moreText = years.slice();
-  }
-  else if (ty == "font"){
-    moreText = fonts.slice();
-  }
-  else if (ty == "design"){
-    moreText = designs.slice();
-  }
-  for (var i=0 ; i < moreText.length ; i++){
-    if (info == years[i]){
-      if (moreText[i].style.display == "inline") 
-        moreText[i].style.display = "none";
-      else 
-        moreText[i].style.display = "inline";
-    }
-    else {
-      moreText[i].style.display = "none";
-    }
-  }
-}
-
-*/
