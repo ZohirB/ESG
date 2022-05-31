@@ -1,6 +1,6 @@
 
 const years = [FirstYear,SecondYear,ThirdYear,FourthYear,FifthYear];
-const fonts = [Font_1,Font_2,Font_3];
+const fonts = [Font_1,Font_2,Font_3,Font_4,Font_5];
 const designs = [New_design,Old_design];
 
 function DropDown(info,type){

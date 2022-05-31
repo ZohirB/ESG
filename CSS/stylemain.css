@@ -26,6 +26,10 @@
 #Font_4 {
   display: none;
 }
+#Font_5 {
+  display: none;
+}
+
 
 
 #New_design {
@@ -75,7 +79,12 @@
 .font5{
   font-family: '5';
 }
-
+.font6{
+  font-family: '6';
+}
+.font7{
+  font-family: '7';
+}
 
 .theme {
   display: flex;
@@ -138,4 +147,16 @@
   font-style: normal;
   font-weight: 500;
   src: url(fonts/font_php/5.ttf);
+}
+@font-face {
+  font-family: '6';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/6.ttf);
+}
+@font-face {
+  font-family: '7';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/font_php/7.ttf);
 }

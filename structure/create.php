@@ -135,10 +135,28 @@ if($design == 1){
     $options['headertextcolor']=array(0xFF,0xFF,0xFF);
     $options['textcolor']=array(0x0d,0x73,0x77); 
     $options['endtitlecolor']=array(0xff,0xff,0xff);
+} else if ($design == 9){ 
+    $options['backgroundcolor']=array(0xb4,0xe1,0x97);//B4E197
+    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['headercolor']=array(0x4e,0x94,0x4f);
+    $options['linecolor']=array(0x4e,0x94,0x4f); //4E944F
+    $options['titlecolor']=array(0xff,0xff,0xff); 
+    $options['headertextcolor']=array(0xFF,0xFF,0xFF); 
+    $options['textcolor']=array(0x44,0x6a,0x46); //446A46
+    $options['endtitlecolor']=array(0xff,0xff,0xff);
+} else if ($design == 10){ 
+    $options['backgroundcolor']=array(0xec,0x25,0x5a);//EC255A
+    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['headercolor']=array(0x29,0x2C,0x6D);
+    $options['linecolor']=array(0x29,0x2C,0x6D); //292C6D
+    $options['titlecolor']=array(0xff,0xff,0xff); 
+    $options['headertextcolor']=array(0xFF,0xFF,0xFF); 
+    $options['textcolor']=array(0x29,0x2c,0x6d); //292C6D
+    $options['endtitlecolor']=array(0xff,0xff,0xff);
 }
 
 /*
-    أزرق نص غامق
+الأحضري البري
     $options['backgroundcolor']=array(0x02,0x94,0xa5); //0294a5
     $options['cellcolor']=array(0xF2,0xEA,0xED); 
     $options['headercolor']=array(0x03,0x35,0x3e);
@@ -146,7 +164,9 @@ if($design == 1){
     $options['titlecolor']=array(0xff,0xff,0xff); 
     $options['headertextcolor']=array(0xFF,0xFF,0xFF); //c1403d
     $options['textcolor']=array(0x04,0x06,0x0f); //04060f//a79c93
+    $options['endtitlecolor']=array(0xff,0xff,0xff);
 */
+
 
 $local = $_SERVER['SCRIPT_FILENAME'];
 $pos   = strrpos($local, '/');
@@ -189,10 +209,17 @@ if ($font == 1){
     $options['endtitlesize']=40;
 } else if ($font == 6){
     $font  = $path.'/../css/fonts/font_php/6.ttf';
-    $options['widthmargin']=400;
+    $options['widthmargin']=425;
     $options['textsize']=25;
     $options['headertextsize']=37;
-    $options['titlesize']=45;
+    $options['titlesize']=40;
+    $options['endtitlesize']=35;  
+} else if ($font == 7){
+    $font  = $path.'/../css/fonts/font_php/7.ttf';
+    $options['widthmargin']=400;
+    $options['textsize']=20;
+    $options['headertextsize']=35;
+    $options['titlesize']=38;
     $options['endtitlesize']=35;  
 }
 

@@ -57,6 +57,9 @@
         checkbox_design_label(506,6,"اللون التركوازي");
         checkbox_design_label(507,7,"اللون الأزرق");
         checkbox_design_label(508,8,"اللون الفستقي");
+        checkbox_design_label(509,9,"اللون الأخضر");
+        checkbox_design_label(510,10,"اللون الأحمر");
+
         /*
         echo"   <div class='sub_button'>
                 <a href='structure/colorReq.php'>
@@ -104,13 +107,17 @@
         createNewFontLabel(405,5,"الخط رقم 3 (Bold)","font5");
         echo"</div>";
 
-        /*
+        
         createNewFontH2("Font_4","الخط رقم 4");
         echo"<div id='Font_4'>";
-        createNewFontLabel(406,6,"الخط رقم 4 (Light)","font6");
-        createNewFontLabel(407,7,"الخط رقم 4 (Bold)","font7");
+        createNewFontLabel(406,6,"الخط رقم 4 (Regular)","font6");
         echo"</div>";
-        */
+
+        createNewFontH2("Font_5","الخط رقم 5");
+        echo"<div id='Font_5'>";
+        createNewFontLabel(407,7,"الخط رقم 5 (Regular)","font7");
+        echo"</div>";
+        
     }
 
     function print_na_label(){
