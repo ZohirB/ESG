@@ -28,22 +28,27 @@ mysqli_select_db($res,$db_name);
 //$res = mysqli_connect('localhost','root','');
 //mysqli_select_db($res,"neatschedule");
 $r = mysqli_query($res,"SELECT * FROM `schedule_2_2022` WHERE `code`='".$_GET['code']."'");
-
 $r = mysqli_fetch_assoc($r);
+
 $selected=explode(',',$r['selected']);
 if(!is_array($selected)){
     $selected=array();
 }
 if($selected[0]==""){
     $selected=array();
-}
-//$selected= array(0,12,20,21,26,32,16);
+}//$selected= array(0,12,20,21,26,32,16);
 
 $design =$r['design'] ;
 $ty=$r['format'];
 $font=$r['font'];
 $na=$r['na'];
 $motn=$r['motn'];
+
+/*
+$des = mysqli_query($res,"SELECT * FROM `design` WHERE `id_design`='".$design."'");
+$des = mysqli_fetch_assoc($des);
+INSERT INTO desgin (backgroundcolor,linecolor,textcolor,headertextcolor,cellcolor,headercolor,titlecolor,endtitlecolor) VALUES ()
+*/
 
 if($design == 1){
     $options['backgroundcolor']=array(0xa9,0xc2,0xeF);

@@ -143,8 +143,8 @@
                 <div class='container-1'>
                 <div class='footer'>
                 <footer>
-                <p>Idea and Build Up By: Hasan</p>
-                <p>Developed By: Zohir</p>
+                <p>Back End developer: IT Eng. Hasan Jaddouh</p>
+                <p>Front End developer: Zohir Boshi</p>
                 </footer>
                 </div>
                 </div>";
