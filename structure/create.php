@@ -124,7 +124,7 @@ if($design == 1){
     $options['endtitlecolor']=array(0xff,0xff,0xff); 
 } else if ($design == 7){  //3F72AF,112D4E,DBE2EF
     $options['backgroundcolor']=array(0x3f,0x72,0xaf); //EAEA7F
-    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['cellcolor']=array(0xF2,0xFF,0xFF); 
     $options['headercolor']=array(0x11,0x2d,0x4e);
     $options['linecolor']=array(0x11,0x2d,0x4e); //333C83
     $options['titlecolor']=array(0xff,0xff,0xff); 
@@ -133,7 +133,7 @@ if($design == 1){
     $options['endtitlecolor']=array(0xff,0xff,0xff);
 } else if ($design == 8){  //62D2A2,1FAB89,65C18C
     $options['backgroundcolor']=array(0x62,0xd2,0xa2); 
-    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['cellcolor']=array(0xFF,0xFF,0xFF); 
     $options['headercolor']=array(0x1f,0xab,0x89);
     $options['linecolor']=array(0x1f,0xab,0x89);
     $options['titlecolor']=array(0xff,0xff,0xff); 
@@ -142,7 +142,7 @@ if($design == 1){
     $options['endtitlecolor']=array(0xff,0xff,0xff);
 } else if ($design == 9){ 
     $options['backgroundcolor']=array(0xb4,0xe1,0x97);//B4E197
-    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['cellcolor']=array(0xFF,0xFF,0xFF); 
     $options['headercolor']=array(0x4e,0x94,0x4f);
     $options['linecolor']=array(0x4e,0x94,0x4f); //4E944F
     $options['titlecolor']=array(0xff,0xff,0xff); 
@@ -151,7 +151,7 @@ if($design == 1){
     $options['endtitlecolor']=array(0xff,0xff,0xff);
 } else if ($design == 10){ 
     $options['backgroundcolor']=array(0xec,0x25,0x5a);//EC255A
-    $options['cellcolor']=array(0xF2,0xEA,0xED); 
+    $options['cellcolor']=array(0xFF,0xFF,0xFF); 
     $options['headercolor']=array(0x29,0x2C,0x6D);
     $options['linecolor']=array(0x29,0x2C,0x6D); //292C6D
     $options['titlecolor']=array(0xff,0xff,0xff); 
