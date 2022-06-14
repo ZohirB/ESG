@@ -79,45 +79,25 @@
     }
 
     // font section
-    function createNewFontH2($fontNum,$fontName){
-        echo"<h2 class='h2-2' aria-hidden='true' type='button' onclick='DropDown(".$fontNum.",2)'>".$fontName."</h2>";
-    }
-
     function createNewFontLabel($labelId,$val,$fontName,$labelClass){
         echo"<input type='radio' input id='".$labelId."' name='font' value='".$val."'>";
         echo"<label for='".$labelId."' class='".$labelClass."'>".$fontName."</label>";
     }
 
     function print_font_label(){
-        createNewFontH2("Font_1","الخط رقم 1");
-        echo"<div id='Font_1'>";
         echo"<input type='radio' input id='401' name='font' value='1' checked='checked'>";
         echo"<label for='401' class='font1'>الخط رقم 1 (Regular)</label>";
-        echo"</div>";
 
-        createNewFontH2("Font_2","الخط رقم 2");
-        echo"<div id='Font_2'>";
         createNewFontLabel(402,2,"الخط رقم 2 (Light)","font2");
         createNewFontLabel(403,3,"الخط رقم 2 (Bold)","font3");
-        echo"</div>";
 
-        createNewFontH2("Font_3","الخط رقم 3");
-        echo"<div id='Font_3'>";
         createNewFontLabel(404,4,"الخط رقم 3 (Light)","font4");
         createNewFontLabel(405,5,"الخط رقم 3 (Bold)","font5");
-        echo"</div>";
 
-        
-        createNewFontH2("Font_4","الخط رقم 4");
-        echo"<div id='Font_4'>";
         createNewFontLabel(406,6,"الخط رقم 4 (Regular)","font6");
-        echo"</div>";
 
-        createNewFontH2("Font_5","الخط رقم 5");
-        echo"<div id='Font_5'>";
         createNewFontLabel(407,7,"الخط رقم 5 (Regular)","font7");
-        echo"</div>";
-        
+
     }
 
     function print_na_label(){

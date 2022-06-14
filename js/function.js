@@ -1,6 +1,6 @@
 
 const years = [FirstYear,SecondYear,ThirdYear,FourthYear,FifthYear];
-const fonts = [Font_1,Font_2,Font_3,Font_4,Font_5];
+//const fonts = [Font_1,Font_2,Font_3,Font_4,Font_5];
 const designs = [New_design,Old_design];
 
 function DropDown(info,type){
@@ -99,8 +99,30 @@ str[7]="لا تتوقف عندما تتعب، توقف فقط عندما تنت�
 str[8]="سيكون الأمر صعباً، لكن الصعب لا يعني مستحيلًا";
 str[9]="أن تحاول أي محاولة جديدة وتتعثر لتتعلم، أفضل من عدم المحاولة نهائياً";
 str[10]="تذكر دوماً ما أنت بارع فيه وتمسك به";
+str[11]="The greater the difficulty, the more the glory in surmounting it";
+str[12]="Too tired? Too hard? Too early? Too busy? NO EXCUSES";
+str[13]="Quitting... that's for those who have no heart. I DO NOT QUIT";
+str[14]="Pain is temporary. Greatness last forever";
+str[15]="Success usually comes to those who are too busy looking for it";
+str[16]="It is never too late to be what you want to be";
+str[17]="Success is the result of preparation, hard work, and learning from failure";
+str[18]="All our dreams can come true, if we have the courage to pursue them";
 
 function gen_random(){
   var num = generateRandomNumber(10);
   document.getElementById("mot").value = str[num];
+}
+
+mot_num = 0;
+function next_mot (){
+  ++mot_num;
+  if (mot_num >= str.length)
+    mot_num = 0; 
+  document.getElementById("mot").value = str[mot_num];
+}
+function last_mot(){
+  --mot_num;
+  if (mot_num < 0)
+    mot_num = str.length - 1; 
+  document.getElementById("mot").value = str[mot_num];
 }

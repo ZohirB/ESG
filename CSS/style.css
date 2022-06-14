@@ -93,6 +93,14 @@ h1 {
   font-weight: normal;
 }
 
+.h2-3{
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+
 .selected::before {content: ' (' counter(selected-subjects) ')';}
 
 /* hide inputs offscreen, but at the same vertical positions as the correpsonding labels, so that tabbing scrolls the viewport as expected */
@@ -188,17 +196,38 @@ input:checked + label::after {
   color: rgba(0, 0, 0, .3);
 }
 
-
-
 .button-19{
-  border-top-left-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-  border-top-right-radius: 0em;
-  border-bottom-right-radius: 0em;
+  border-radius: 0.5em;
 }
 .button-19:active {
   background: rgb(67, 87, 87);
   color: rgb(67, 87, 87);
+}
+
+
+
+
+/* b123 */
+.column {
+  float: left;
+  padding: 10px; /* 10 */
+}
+
+.left, .right {
+  width: 30%;
+}
+
+.middle {
+  width: 40%;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 

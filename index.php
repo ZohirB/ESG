@@ -105,13 +105,15 @@
         print_design_label();
         echo"</div>";
         echo"</div>";
-
+        
+        /*
         echo"<div class='container'>";
         echo"<div class='table_state'>";
         echo"<h2 class='h2-1'>اختر طبيعة الجدول</h2>";
         print_na_label();
         echo"</div>";
         echo"</div>";
+        */
 
         echo"<div class='container motivational'>";
         echo"<h2 class='h2-1'>اختر حالة العبارة التحفيزية</h2>";
@@ -126,7 +128,20 @@
         <div id='tb'>
             <div class='input-container'>
                 <input type='text' id='mot' name='motn' value='' class='input-field placeholder='اكتب العبارة...' >
-                <button type='button' class='button-18 button-19 input-button' onclick='gen_random()'><i style='font-size:20px' class='fa'>&#xf021;</i></button>
+            </div>
+
+            <div class = 'row'>
+                <div class = 'column left'>
+                    <button type='button' class='button-18 button-19 input-button' onclick='last_mot()' style='font-size:12px'>العبارة السابقة</button>
+                </div>
+
+                <div class = 'column middle'>
+                    <p class='h2-3'> عبارات جاهزة </p>
+                </div>
+
+                <div class = 'column right'>
+                    <button type='button' class='button-18 button-19 input-button' onclick='next_mot()' style='font-size:12px'>العبارة التالية</button>
+                </div>  
             </div>
         </div>";
         
@@ -165,9 +180,6 @@
             }
             if (array_key_exists('font', $_POST)) {
                 $font = intval($_POST['font']);
-            }
-            if (array_key_exists('na', $_POST)) {
-                $na = intval($_POST['na']);
             }
 
             if (array_key_exists('motivational', $_POST)) {

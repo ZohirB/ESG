@@ -6,9 +6,9 @@ input[type=text], select {
   padding: 12px 20px;
   margin: 0px 0px;
   display: flex;
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
+  border-radius: 0.5em;
   box-sizing: border-box;
+  align-content: center;
 }
 .input-container {
   display: flex;
