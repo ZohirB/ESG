@@ -32,11 +32,13 @@
             <!-- Slideshow container -->
             <div class='slideshow-container'>";
 
-        slideshow_con("5 / 1","ex1","اللون الأزرق (الجديد) + الخط رقم 2 (Bold)");
-        slideshow_con("5 / 2","ex2","اللون التركوازي + الخط رقم 2 (Light)");
-        slideshow_con("5 / 3","ex3","اللون الأزرق (قديم) + الخط رقم 1 (Regular)");
-        slideshow_con("5 / 4","ex4","اللون البنفسجي + الخط رقم 3 (Light)");
-        slideshow_con("5 / 5","ex5","اللون الفستقي + الخط رقم 3 (Bold)");
+        slideshow_con("7 / 1","ex1","اللون الأزرق (الجديد) + الخط رقم 2 (Bold)");
+        slideshow_con("7 / 2","ex2","اللون التركوازي + الخط رقم 2 (Light)");
+        slideshow_con("7 / 3","ex3","اللون الأزرق (قديم) + الخط رقم 1 (Regular)");
+        slideshow_con("7 / 4","ex4","اللون البنفسجي + الخط رقم 3 (Light)");
+        slideshow_con("7 / 5","ex5","اللون الفستقي + الخط رقم 3 (Bold)");
+        slideshow_con("7 / 6","ex6","اللون الأحضر (جديد) + الخط رقم 4");
+        slideshow_con("7 / 7","ex7","اللون الأحمر + الخط رقم 5");
 
         echo "
             <a class='prev' onclick='plusSlides(-1)'>&#10094;</a>
