@@ -13,7 +13,9 @@
     <link rel='stylesheet' href='css/style.css'>
     <link rel='stylesheet' href='css/slideShow.css'>
     <link rel='stylesheet' href='css/textbox.css'>
+
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
     <script class='u-script' type='text/javascript' src='js/function.js' defer=''></script>
     <script class='u-script' type='text/javascript' src='js/main.js' defer=''></script>
         <title>Neat schedule 2.0</title>
@@ -136,7 +138,7 @@
                 </div>
 
                 <div class = 'column middle'>
-                    <p class='h2-3'> عبارات جاهزة </p>
+                    <button type='button' class='button-18 button-19 input-button' onclick='gen_random()' style='font-size:12px'>عبارة عشوائية</button>
                 </div>
 
                 <div class = 'column right'>
@@ -182,19 +184,20 @@
                 $font = intval($_POST['font']);
             }
 
+            $res = mysqli_connect($db_host, $db_user, $db_pass);
+            mysqli_select_db($res, $db_name);
+
             if (array_key_exists('motivational', $_POST)) {
                 $motivational = intval($_POST['motivational']);
 
                 if ($motivational == 2){
-                    $motn = $_POST['motn'];
+                    $motn = mysqli_real_escape_string($res,$_POST['motn']);
                 }
                 else {
-                    $motn = null;
+                    $motn = "";
                 }
             }
 
-            $res = mysqli_connect($db_host, $db_user, $db_pass);
-            mysqli_select_db($res, $db_name);
             //$res = mysqli_connect('localhost','root','');  
             //mysqli_select_db($res,"neatschedule"); 
             $cd = md5(rand(1, 1000000000));
@@ -205,7 +208,21 @@
                 }
             }
 
-            mysqli_query($res, "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "','" . $motn . "')");
+            //$sql_query = "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "',?);";
+            $sql_query = "INSERT INTO `schedule_2_2022` VALUES (NULL,'" . $cd . "', '" . time() . "','" . $_SERVER['REMOTE_ADDR'] . "','" . implode(',', $selected) . "','" . $design . "','" . $ty . "','" . $font . "','" . $na . "','" . $motn . "');";
+
+            /*
+            $stmt = mysqli_stmt_init($res);
+            if (!mysqli_stmt_prepare($stmt, $sql_query)){
+                echo "SQL ERROR";
+            } else {
+                mysqli_stmt_bind_param($stmt,"s",$motn);
+                mysqli_stmt_execute($stmt);
+            */
+                mysqli_query($res, $sql_query);  
+            //}
+            
+            
             //echo mysqli_error($res);
             header('location: structure/create.php?code=' . $cd);
         }

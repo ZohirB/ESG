@@ -1,8 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:500,700);
 
 *, *::before, *::after {
   box-sizing: border-box;
   direction: rtl;
+  font-family: 'Tajawal-Light';
+  font-weight: 400;
 }
 
 html {
@@ -13,7 +14,7 @@ body {
   margin: 20px;
   color: #435757;
   background: linear-gradient(-20deg, #d0b782 20%, #a0cecf 80%);
-  font: 400 1.2em/1.2 'Roboto', sans-serif;
+  font: 400 1.2em/1.2 'Tajawal-Light', sans-serif;
 }
 
 .container {
@@ -30,7 +31,6 @@ body {
   height: fit-content;
   margin: 0 auto;
   color: #ffffff;
-  font-family: Arvo-Regular;
   font-size: small;
   border-top: 5px solid #435757;
   background-color: #435757;
@@ -45,12 +45,14 @@ h1 {
   background-color: rgba(255, 255, 255, .4);
   font-size: 1.4em;
   text-align: center;
+  font-family: 'Tajawal-bold';
 }
 
 .h2-1{
   position: relative;
   margin: 0;
   padding: 10px 0;
+  font-family: 'Tajawal-bold';
   font-size: 1.2em;
 }
 .h2-1::after{
@@ -69,13 +71,14 @@ h1 {
   font-weight: normal;
 }
 
-
 .h2-2{
   position: relative;
   margin: 0;
   padding: 10px 0;
-  font-size: 1.2em;
   cursor: pointer;
+  font-family: 'Tajawal-bold';
+  font-size: 1em;
+  font-weight: 800;
 }
 .h2-2::after{
   content: '';
@@ -123,6 +126,7 @@ label {
   padding: 15px 45px 15px 0px;
   border-top: 1px dashed #fff;
   cursor: pointer;
+  font-weight: 800;
   /*order: 0;*/
 }
 
@@ -209,16 +213,17 @@ input:checked + label::after {
 
 /* b123 */
 .column {
-  float: left;
+  float: right;
   padding: 10px; /* 10 */
+  margin-left: auto;
 }
 
 .left, .right {
-  width: 30%;
+  width: 33%;
 }
 
 .middle {
-  width: 40%;
+  width: 33%;
 }
 
 
@@ -250,8 +255,15 @@ a, a:hover, a:focus, a:active {
 }
 
 @font-face {
-  font-family: 'Arvo-Regular';
+  font-family: 'Tajawal-Light';
   font-style: normal;
   font-weight: 400;
-  src: url(fonts/Arvo-Regular.ttf);
+  src: url(fonts/Tajawal-Light.ttf);
+}
+
+@font-face {
+  font-family: 'Tajawal-Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Tajawal-Bold.ttf);
 }

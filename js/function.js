@@ -81,11 +81,6 @@ function mot_text(radio_val){
   }
 }
 
-function generateRandomNumber(maxLimit){
-  let rand = Math.random() * maxLimit;
-  rand = Math.floor(rand);
-  return rand;
-}
 
 var str = [];
 str[0]="إذا أردت أن تتغلب على الهزيمة فعليك بالانتصار";
@@ -107,13 +102,21 @@ str[15]="Success usually comes to those who are too busy looking for it";
 str[16]="It is never too late to be what you want to be";
 str[17]="Success is the result of preparation, hard work, and learning from failure";
 str[18]="All our dreams can come true, if we have the courage to pursue them";
+mot_num = 0;
+
+function generateRandomNumber(){
+  maxLimit = str.length;
+  let rand = Math.random() * maxLimit;
+  rand = Math.floor(rand);
+  return rand;
+}
 
 function gen_random(){
-  var num = generateRandomNumber(10);
+  var num = generateRandomNumber();
+  mot_num = num;
   document.getElementById("mot").value = str[num];
 }
 
-mot_num = 0;
 function next_mot (){
   ++mot_num;
   if (mot_num >= str.length)
